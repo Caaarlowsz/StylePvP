@@ -1,0 +1,290 @@
+########################################################
+#
+#/* Plugin Type: (Kit-PvP)
+#/* Inspirational Plugin Name: (BattleCraft/BattleBits)
+#/* Original Plugin Name: (PVP)
+#/* Plugin Version: v1.0 
+#/* Plugin Version Type: (BETA)
+#/* @BattleBitsMC R.I.P 2014 - 2018
+#                                                       
+########################################################
+
+##########################################################################
+#
+#/* Configuracoes Por Partes!
+#
+#/* (1) Site ScoreBoard!
+#/* (2) Mensagens (/pl , /plugins etc..)!
+#/* (3) Mensagens Automaticas!
+#/* (4) Mensagens De Login (ao entrar no servidor)!
+#/* (5) Mensagens Placas Recraft/Sopas
+#/* (6) Mensagens Motds Automaticos
+#/* (7) Mensagens /aplicar
+#/* (8) Mensagens /youtuber
+#/* (9) Mensagens /regras
+#/* (10) Mensagens ScoreBoards Animadas
+#/* (11) Nomes na TAB (1.8+
+#/* (12) Mensagens /loja 
+#
+#########################################################################
+
+#--------------------------------------------------------------------------------------
+#/* (1) Site ScoreBoard
+#/* Obs: O site e separado, pois cada parte nao pode ter mais de 15 carateres!
+#/* Caso todos os jogadores sejam kickados ao entrar no servidor, diminua os carateres!
+#/* Lembrando que os NUMEROS de cores tambem contam (nao os & , so os numeros)!
+#--------------------------------------------------------------------------------------
+
+MSITE-SCORE-PREFIX: '&6www.battlebits'
+MSITE-SCORE-SUFFIX: '&6.com.br'
+
+#--------------------------------------------------------------------------------------------
+#/* (2) Mensagens do /plugin , /pl , /help etc..
+#/* Obs: Coloque aqui as mensagens que irao aparecer ao utilizar um dos comandos ditos acima!
+#--------------------------------------------------------------------------------------------
+
+MSG-PLUGINS: '&fPlugins(1): &aPVP'
+
+#--------------------------------------------------------------
+#/* (3) Mensagens Automaticas
+#/* Obs: Altere aqui as mensagens automaticas de 2 em 2 minutos
+#--------------------------------------------------------------
+
+AUTO-MSG1-LINE1: ' '
+AUTO-MSG1-LINE2: '&6&lBattleCraft &7> &fAcesse o site do &6&lSERVIDOR &fem: &6&lwww.battlebits.com.br'
+AUTO-MSG1-LINE3: ' '
+
+AUTO-MSG2-LINE1: ' '
+AUTO-MSG2-LINE2: '&6&lBattleCraft &7> &fQuer fazer parte da &d&lEQUIPE&f? Utilize: /aplicar !'
+AUTO-MSG2-LINE3: ' '
+
+AUTO-MSG3-LINE1: ' '
+AUTO-MSG3-LINE2: '&6&lBattleCraft &7> &fAchou algum &c&lBUG&f? Reporte-o para a &6&lSTAFF&f!'
+AUTO-MSG3-LINE3: ' '
+
+AUTO-MSG4-LINE1: ' '
+AUTO-MSG4-LINE2: '&6&lBattleCraft &7> &fVeja os &d&lSTAFFERS &fque estao &a&lONLINE&f! Utilize: /equipe !'
+AUTO-MSG4-LINE3: ' '
+
+AUTO-MSG5-LINE1: ' '
+AUTO-MSG5-LINE2: '&6&lBattleCraft &7> &fSiga-nos no &b&lTWITTER &fe fique por dentro das &9&lATUALIZACOES&f! Acesse: &b&l@BattleBitsMC'
+AUTO-MSG5-LINE3: ' '
+
+AUTO-MSG6-LINE1: ' '
+AUTO-MSG6-LINE2: '&6&lBattleCraft &7> &fAchou algum &c&lHACK&f? Utilize: /report para &a&lREPORTA-LO &fpara a &d&lSTAFF&f!'
+AUTO-MSG6-LINE3: ' '
+
+AUTO-MSG7-LINE1: ' '
+AUTO-MSG7-LINE2: '&6&lBattleCraft &7> &fLembre-se que e apenas um &2&lJOGO&f! Nao ofenda outros jogadores ou o &6&lSERVIDOR&f!'
+AUTO-MSG7-LINE3: ' '
+AUTO-MSG7-LINE4: ' '
+
+AUTO-MSG8-LINE1: ' '
+AUTO-MSG8-LINE2: '&6&lBattleCraft &7> &fQuer ter acesso ao beneficio &b&lDOUBLEXP&f? Entao adquira seu &6&lVIP&f! Acesse: &6&lwww.battlebits.com.br'
+AUTO-MSG8-LINE3: ' '
+
+AUTO-MSG9-LINE1: ' '
+AUTO-MSG9-LINE2: '&6&lBattleCraft &7> &fCaso voce for puxado para &4&lSCREENSHARE&f, nao &c&lDESLOGUE&f! Aguarde as instrucoes do &d&lSTAFFER&f!'
+AUTO-MSG9-LINE3: ' '
+
+AUTO-MSG10-LINE1: ' '
+AUTO-MSG10-LINE2: '&6&lBattleCraft &7> &fQuer ser um &b&lYOUTUBER &fdo &6&lSERVIDOR&f? Utilize: /youtuber !'
+AUTO-MSG10-LINE3: ' '
+
+#--------------------------------------------------------------
+#/* (4) Mensagens De Login (entrar no servidor)
+#/* Obs: Coloque aqui as mensagens do jeito que quiser!
+#--------------------------------------------------------------
+
+MSG-ENTRAR-1: '     &9&lConectado &7ao servidor &9&lPvP (Full Iron)&8!       '
+MSG-ENTRAR-2: ' '
+MSG-ENTRAR-3: '&6&lBattleCraft &7> &fSeja muito &a&lBEM-VINDO &fao nosso &6&lSERVIDOR&f!'
+MSG-ENTRAR-4: ' '
+MSG-ENTRAR-5: '&fPara adquirir &6&lVIPs&f, &b&lKITs&f entre outros acesse: &6&lwww.battlebits.com.br'
+MSG-ENTRAR-6: ' '
+MSG-ENTRAR-7: '&fLembre-se de nos ajudar tambem &e&lDIVULGANDO &fo &6&lSERVIDOR &fpara seus &a&lAMIGOS&f!'
+MSG-ENTRAR-8: ''
+MSG-ENTRAR-9: '&fAtenciosamente, a equipe.'
+
+#--------------------------------------------------------------
+#/* (5) Mensagens Das Placas de Recraft e Sopas!
+#/* Obs: Tenha em mente do limite de carateres das placas!
+#--------------------------------------------------------------
+
+MSG-PLACA-RECRAFT-1: '&b&lRecraft'
+MSG-PLACA-RECRAFT-2: '&a&lGratis!'
+MSG-PLACA-RECRAFT-3: '&7(&8Clique&7)'
+
+MSG-PLACA-SOPA-1: '&6&lSopas'
+MSG-PLACA-SOPA-2: '&a&lGratis!'
+MSG-PLACA-SOPA-3: '&7(&8Clique&7)'
+
+#--------------------------------------------------------------
+#/* (6) Mensagens Motd Automaticos
+#/* Obs: Lembre-se de nao exagerar no tamanho ou podera bugar!
+#--------------------------------------------------------------
+
+AUTOMOTD-1-LINE1: '    &6&lBattleCraft &f- &b&lServidor de PvP'
+AUTOMOTD-1-LINE2: '    &6&lJunte-se a nos agora mesmo!'
+
+AUTOMOTD-2-LINE1: '    &6&lBattleCraft &f- &c&lCORRA!'
+AUTOMOTD-2-LINE2: ' &e&lNOSSA LOJA ESTA COM PROMOCAO LIMITADA!'
+
+AUTOMOTD-3-LINE1: '    &6&lBattleCraft &f- &b&lServidor de PvP'
+AUTOMOTD-3-LINE2: '  &a&lVenha testar a &e&lBETA &a&ldo &6&lSERVIDOR&f!'
+
+#--------------------------------------------------------------
+#/* (7) Mensagens do /aplicar
+#/* Obs: Coloque abaixo!
+#--------------------------------------------------------------
+
+MSG-APLICAR-1: '&6&lBattleCraft &7> &fAplicacao para &d&lSTAFF&f!'
+MSG-APLICAR-2: ' '
+MSG-APLICAR-3: '&fAplique-se para &5&lTRIAL &fem: &6&lwww.trial.com.br'
+MSG-APLICAR-4: '&fAplique-se para &5&lMODGC &fem: &6&lwww.modgc.com.br'
+MSG-APLICAR-5: '&fAplique-se para &9&lAJUDANTE &fem: &6&lwww.ajudante.com.br'
+MSG-APLICAR-6: ' '
+MSG-APLICAR-7: '&4&lAVISO: &fAo pedir para lermos o seu &e&lFORMULARIO&f, suas &b&lCHANCES &fserao &c&lREDUZIDAS&f!'
+
+#--------------------------------------------------------------
+#/* (8) Mensagens do /youtuber
+#/* Obs: Coloque abaixo!
+#--------------------------------------------------------------
+
+MSG-YT-1: '&6&lBattleCraft &&> &fRequisitos para tag &6&lPREMIUM&f!'
+MSG-YT-2: ''
+MSG-YT-3: '&fInscritos: &a70+'
+MSG-YT-4: '&fVisualizacoes no Video: &a50+'
+MSG-YT-5: '&fMedia de Likes no Video: &a5/15'
+MSG-YT-6: ''
+MSG-YT-7: '&6&lBattleCraft &&> &fRequisitos para tag &b&lYOUTUBER&f!'
+MSG-YT-8: ''
+MSG-YT-9: '&fInscritos: &a250+'
+MSG-YT-10: '&fVisualizacoes no Video: &a100+'
+MSG-YT-11: '&fMedia de Likes no Video: &a15/25'
+MSG-YT-12: ''
+MSG-YT-13: '&6&lBattleCraft &&> &fRequisitos para tag &3&lYOUTUBER+&f!'
+MSG-YT-14: ''
+MSG-YT-15: '&fInscritos: &a500+'
+MSG-YT-16: '&fVisualizacoes no Video: &a200+'
+MSG-YT-17: '&fMedia de Likes no Video: &a20/30'
+MSG-YT-18: ''
+MSG-YT-19: '&b&lCOMO RECEBER A TAG&f? Apenas envia o link do &6&lVIDEO &7(&ecom seu nick na descricao&7) &fpara o &e&lTELL &fde um &d&lSTAFFER&f, e aguarde a resposta.'
+
+#--------------------------------------------------------------
+#/* (9) Mensagens do /regras
+#/* Obs: Coloque abaixo!
+#--------------------------------------------------------------
+
+MSG-REGRAS-1: '&6&lBattleCraft &7> Lista das &c&lREGRAS&f!'
+MSG-REGRAS-2: ''
+MSG-REGRAS-3: '&fE totalmente &4&lPROIBIDO:'
+MSG-REGRAS-4: ''
+MSG-REGRAS-5: '&c - Abusar de bugs.'
+MSG-REGRAS-6: '&c - Ofesa a staff'
+MSG-REGRAS-7: '&c - Ameaça de ddos (A um jogador ou ao Servidor).'
+MSG-REGRAS-8: '&c - Uso de mods clients/hacked clients/ghost clients.'
+MSG-REGRAS-9: '&c - Uso de autoclick/macro.'
+MSG-REGRAS-10: '&c - Ofensa a jogadores com referencia a racismo/classe social'
+
+#--------------------------------------------------------------
+#/* (10) ScoreBoards Animadas
+#/* Obs: Maximo 32 carateres!
+#--------------------------------------------------------------
+
+#/*Animacao Score PvP
+
+ANIMACAO-SCORE-PVP-1: '&8&l>>&6&lattleCraft - PvP&8&l<<'
+ANIMACAO-SCORE-PVP-2: '&8&l>>&6&lttleCraft - PvP &8&l<<'
+ANIMACAO-SCORE-PVP-3: '&8&l>>&6&ltleCraft - PvP -&8&l<<'
+ANIMACAO-SCORE-PVP-4: '&8&l>>&6&lleCraft - PvP - &8&l<<'
+ANIMACAO-SCORE-PVP-5: '&8&l>>&6&leCraft - PvP - B&8&l<<'
+ANIMACAO-SCORE-PVP-6: '&8&l>>&6&lCraft - PvP - Ba&8&l<<'
+ANIMACAO-SCORE-PVP-7: '&8&l>>&6&lraft - PvP - Bat&8&l<<'
+ANIMACAO-SCORE-PVP-8: '&8&l>>&6&laft - PvP - Batt&8&l<<'
+ANIMACAO-SCORE-PVP-9: '&8&l>>&6&lft - PvP - Battl&8&l<<'
+ANIMACAO-SCORE-PVP-10: '&8&l>>&6&lt - PvP - Battle&8&l<<'
+ANIMACAO-SCORE-PVP-11: '&8&l>>&6&l - PvP - BattleC&8&l<<'
+ANIMACAO-SCORE-PVP-12: '&8&l>>&6&l- PvP - BattleCr&8&l<<'
+ANIMACAO-SCORE-PVP-13: '&8&l>>&6&l PvP - BattleCra&8&l<<'
+ANIMACAO-SCORE-PVP-14: '&8&l>>&6&lPvP - BattleCraf&8&l<<'
+ANIMACAO-SCORE-PVP-15: '&8&l>>&6&lvP - BattleCraft&8&l<<'
+ANIMACAO-SCORE-PVP-16: '&8&l>>&6&lP - BattleCraft &8&l<<'
+ANIMACAO-SCORE-PVP-17: '&8&l>>&6&l - BattleCraft -&8&l<<'
+ANIMACAO-SCORE-PVP-18: '&8&l>>&6&l- BattleCraft - &8&l<<'
+ANIMACAO-SCORE-PVP-19: '&8&l>>&6&l BattleCraft - P&8&l<<'
+ANIMACAO-SCORE-PVP-20: '&8&l>>&6&lBattleCraft - Pv&8&l<<'
+
+#/* Animacao Score 1v1
+
+ANIMACAO-SCORE-1v1-1: '&8&l>>&6&lattleCraft - 1v&8&l<<'
+ANIMACAO-SCORE-1v1-2: '&8&l>>&6&lttleCraft - 1v1&8&l<<'
+ANIMACAO-SCORE-1v1-3: '&8&l>>&6&ltleCraft - 1v1 &8&l<<'
+ANIMACAO-SCORE-1v1-4: '&8&l>>&6&lleCraft - 1v1 -&8&l<<'
+ANIMACAO-SCORE-1v1-5: '&8&l>>&6&leCraft - 1v1 - &8&l<<'
+ANIMACAO-SCORE-1v1-6: '&8&l>>&6&lCraft - 1v1 - B&8&l<<'
+ANIMACAO-SCORE-1v1-7: '&8&l>>&6&lraft - 1v1 - Ba&8&l<<'
+ANIMACAO-SCORE-1v1-8: '&8&l>>&6&laft - 1v1 - Bat&8&l<<'
+ANIMACAO-SCORE-1v1-9: '&8&l>>&6&lft - 1v1 - Batt&8&l<<'
+ANIMACAO-SCORE-1v1-10: '&8&l>>&6&lt - 1v1 - Battl&8&l<<'
+ANIMACAO-SCORE-1v1-11: '&8&l>>&6&l - 1v1 - Battle&8&l<<'
+ANIMACAO-SCORE-1v1-12: '&8&l>>&6&l- 1v1 - BattleC&8&l<<'
+ANIMACAO-SCORE-1v1-13: '&8&l>>&6&l 1v1 - BattleCr&8&l<<'
+ANIMACAO-SCORE-1v1-14: '&8&l>>&6&l1v1 - BattleCra&8&l<<'
+ANIMACAO-SCORE-1v1-15: '&8&l>>&6&lv1 - BattleCraf&8&l<<'
+ANIMACAO-SCORE-1v1-16: '&8&l>>&6&l1 - BattleCraft&8&l<<'
+ANIMACAO-SCORE-1v1-17: '&8&l>>&6&l - BattleCraft &8&l<<'
+ANIMACAO-SCORE-1v1-18: '&8&l>>&6&l- BattleCraft -&8&l<<'
+ANIMACAO-SCORE-1v1-19: '&8&l>>&6&l BattleCraft - &8&l<<'
+ANIMACAO-SCORE-1v1-20: '&8&l>>&6&lBattleCraft - 1&8&l<<'
+
+#/* Animacao Score Admin
+
+ANIMACAO-SCORE-ADMIN-1: '&5> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-2: '&a> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-3: '&2> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-4: '&c> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-5: '&d> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-6: '&4> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-7: '&6> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-8: '&e> Modo Admin <'
+ANIMACAO-SCORE-ADMIN-9: '&b> Modo Admin <'
+
+
+#/* Animacao Score Ss
+
+ANIMACAO-SCORE-SS-1: '&6&l!Screenshare!'
+ANIMACAO-SCORE-SS-2: '&e&l!Screenshare!'
+ANIMACAO-SCORE-SS-3: '&d&l!Screenshare!'
+ANIMACAO-SCORE-SS-4: '&a&l!Screenshare!'
+ANIMACAO-SCORE-SS-5: '&2&l!Screenshare!'
+ANIMACAO-SCORE-SS-6: '&c&l!Screenshare!'
+ANIMACAO-SCORE-SS-7: '&4&l!Screenshare!'
+ANIMACAO-SCORE-SS-8: '&b&l!Screenshare!'
+
+#--------------------------------------------------------------
+#/* (11) Nomes na TABLIST
+#/* Obs: Edite.
+#--------------------------------------------------------------
+
+MNOME-SERVER-TAB: '&6&lBattleCraft &f- &dServidor de PvP'
+MSITE-SERVER-TAB: '&6&lwww.battlebits.com.br'
+MIP-SERVER-TAB: '&ba1.fulliron.battlebits.com.br'
+
+#--------------------------------------------------------------
+#/* (12) Mensagens /loja
+#/* Obs: Edite.
+#--------------------------------------------------------------
+
+MSG-LOJA-1: '&6&lBattleCraft &7> &fNossa &6&lLOJA&f!'
+MSG-LOJA-2: ''
+MSG-LOJA-3: '&fPara compra de &6&lVIPs&f, &b&lKITs &fou &c&lPERMISSOES&f, acesse: &6&lloja.battlebits.com.br'
+MSG-LOJA-4: ''
+MSG-LOJA-5: '&fAo comprar algo na &6&lLOJA &fvoce estara nos &9&lAJUDANDO &fa melhorar e continuar o &6&lSERVIDOR&f!'
+MSG-LOJA-6: ''
+MSG-LOJA-7: '&fAtenciosamente, a equipe.'
+
+
+
+
+
