@@ -7,14 +7,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class KillsAPI {
 	public static File Killss;
 	public static FileConfiguration Kills;
 
 	public static void createFile1() {
-		KillsAPI.Killss = new File("plugins/" + Main.plugin.getDataFolder().getName() + "/Kills.yml");
+		KillsAPI.Killss = new File("plugins/" + StylePvP.plugin.getDataFolder().getName() + "/Kills.yml");
 		KillsAPI.Kills = (FileConfiguration) YamlConfiguration.loadConfiguration(KillsAPI.Killss);
 		saveKills();
 	}

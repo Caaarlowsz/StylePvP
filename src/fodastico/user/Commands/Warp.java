@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.EventoAPI;
 import fodastico.user.Apis.ImortalAPI;
 import fodastico.user.Apis.KitAPI;
@@ -36,8 +36,8 @@ public class Warp implements CommandExecutor {
 			if (Args[0].equalsIgnoreCase("fps")) {
 				p.closeInventory();
 				p.sendMessage(
-						"§3§lWARPS §fVoc\u00ea ser\u00e1 teleportado para a §9§lWARP §9§lFPS §fem §9§l5 SEGUNDOS...");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+						"ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea ser\u00e1 teleportado para a ï¿½9ï¿½lWARP ï¿½9ï¿½lFPS ï¿½fem ï¿½9ï¿½l5 SEGUNDOS...");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
@@ -47,15 +47,15 @@ public class Warp implements CommandExecutor {
 						KitAPI.setFpsItens(p);
 						WarpsManager.Ir(p, "Fps");
 						KitAPI.setKit(p, "Fps");
-						p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP FPS");
+						p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP FPS");
 					}
 				}, 100L);
 			}
 			if (Args[0].equalsIgnoreCase("pot")) {
 				p.closeInventory();
 				p.sendMessage(
-						"§3§lWARPS §fVoc\u00ea ser\u00e1 teleportado para a §9§lWARP §9§lPOT §fem §9§l5 SEGUNDOS...");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+						"ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea ser\u00e1 teleportado para a ï¿½9ï¿½lWARP ï¿½9ï¿½lPOT ï¿½fem ï¿½9ï¿½l5 SEGUNDOS...");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
@@ -65,14 +65,14 @@ public class Warp implements CommandExecutor {
 						KitAPI.setPotItens(p);
 						WarpsManager.Ir(p, "Pot");
 						KitAPI.setKit(p, "Pot");
-						p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP POT");
+						p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP POT");
 					}
 				}, 100L);
 			} else if (Args[0].equalsIgnoreCase("textura")) {
 				p.closeInventory();
 				p.sendMessage(
-						"§3§lWARPS §fVoc\u00ea ser\u00e1 teleportado para a §9§lWARP §9§lTEXTURA §fem §9§l5 SEGUNDOS...");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+						"ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea ser\u00e1 teleportado para a ï¿½9ï¿½lWARP ï¿½9ï¿½lTEXTURA ï¿½fem ï¿½9ï¿½l5 SEGUNDOS...");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
@@ -82,7 +82,7 @@ public class Warp implements CommandExecutor {
 						WarpsManager.Ir(p, "Textura");
 						ImortalAPI.setInvensibility(p);
 						KitAPI.RemoveKit(p);
-						p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP TEXTURA");
+						p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP TEXTURA");
 					}
 				}, 100L);
 			} else if (Args[0].equalsIgnoreCase("evento")) {
@@ -93,20 +93,20 @@ public class Warp implements CommandExecutor {
 					WarpsManager.Ir(p, "Evento");
 					KitAPI.setKit(p, "Evento");
 					Warp.inEvent.put(p.getName(), "/spawn");
-					p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP EVENTO");
+					p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP EVENTO");
 					p.getInventory().clear();
 					p.updateInventory();
-					Main.sc.registerScoreBoard(p);
+					StylePvP.sc.registerScoreBoard(p);
 				} else {
 					p.closeInventory();
 					p.sendMessage(
-							"§e§lEVENTO §fNenhum §6§lEVENTO §fest\u00e1 iniciando agora ou j\u00e1 possui um §6§lEVENTO §fem §a§lANDAMENTO§f!");
+							"ï¿½eï¿½lEVENTO ï¿½fNenhum ï¿½6ï¿½lEVENTO ï¿½fest\u00e1 iniciando agora ou j\u00e1 possui um ï¿½6ï¿½lEVENTO ï¿½fem ï¿½aï¿½lANDAMENTOï¿½f!");
 				}
 			} else if (Args[0].equalsIgnoreCase("1v1")) {
 				p.sendMessage(
-						"§3§lWARPS §fVoc\u00ea ser\u00e1 teleportado para a §9§lWARP §9§l1v1 §fem §9§l5 SEGUNDOS...");
+						"ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea ser\u00e1 teleportado para a ï¿½9ï¿½lWARP ï¿½9ï¿½l1v1 ï¿½fem ï¿½9ï¿½l5 SEGUNDOS...");
 				p.closeInventory();
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
@@ -117,15 +117,15 @@ public class Warp implements CommandExecutor {
 						ImortalAPI.setInvensibility(p);
 						WarpsManager.Ir(p, "1v1");
 						KitAPI.setKit(p, "1v1");
-						Main.sc.registerScoreBoard(p);
-						p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP 1v1");
+						StylePvP.sc.registerScoreBoard(p);
+						p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP 1v1");
 						final ItemStack blaze = new ItemStack(Material.BLAZE_ROD);
 						final ItemMeta blaze2 = blaze.getItemMeta();
-						blaze2.setDisplayName("§3§lDESAFIO");
+						blaze2.setDisplayName("ï¿½3ï¿½lDESAFIO");
 						blaze.setItemMeta(blaze2);
 						final ItemStack sack = new ItemStack(Material.INK_SACK, 1, (short) 8);
 						final ItemMeta sack2 = sack.getItemMeta();
-						sack2.setDisplayName("§a§lFAST1V1");
+						sack2.setDisplayName("ï¿½aï¿½lFAST1V1");
 						sack.setItemMeta(sack2);
 						p.getInventory().setItem(3, blaze);
 						p.getInventory().setItem(5, sack);
@@ -133,9 +133,9 @@ public class Warp implements CommandExecutor {
 				}, 100L);
 			} else if (Args[0].equalsIgnoreCase("challenge")) {
 				p.sendMessage(
-						"§3§lWARPS §fVoc\u00ea ser\u00e1 teleportado para a §9§lWARP §9§lCHALLENGE §fem §9§l5 SEGUNDOS...");
+						"ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea ser\u00e1 teleportado para a ï¿½9ï¿½lWARP ï¿½9ï¿½lCHALLENGE ï¿½fem ï¿½9ï¿½l5 SEGUNDOS...");
 				p.closeInventory();
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
@@ -145,7 +145,7 @@ public class Warp implements CommandExecutor {
 						KitAPI.setChallengeItens(p);
 						WarpsManager.Ir(p, "Challenge");
 						KitAPI.setKit(p, "Challenge");
-						p.sendMessage("§3§lWARPS §fVoc\u00ea foi teleportado para a §9§lWARP CHALLENGE");
+						p.sendMessage("ï¿½3ï¿½lWARPS ï¿½fVoc\u00ea foi teleportado para a ï¿½9ï¿½lWARP CHALLENGE");
 					}
 				}, 100L);
 			}

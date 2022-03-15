@@ -4,20 +4,20 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class ListenerManager {
 	public static void onEventsLoad() {
-		for (final Class<?> Classes : ClassGetter.getClassesForPackage(Main.getPlugin(Main.class),
+		for (final Class<?> Classes : ClassGetter.getClassesForPackage(StylePvP.getPlugin(StylePvP.class),
 				"fodastico.user.Events")) {
 			try {
 				if (!Listener.class.isAssignableFrom(Classes)) {
 					continue;
 				}
 				final Listener listener = (Listener) Classes.newInstance();
-				Bukkit.getPluginManager().registerEvents(listener, (Plugin) Main.getPlugin(Main.class));
-				Bukkit.getConsoleSender().sendMessage("§e§lEVENTO §fO §e§lEVENTO §7(§e"
-						+ listener.getClass().getSimpleName() + "§ffoi carregado com sucesso!");
+				Bukkit.getPluginManager().registerEvents(listener, (Plugin) StylePvP.getPlugin(StylePvP.class));
+				Bukkit.getConsoleSender().sendMessage("ï¿½eï¿½lEVENTO ï¿½fO ï¿½eï¿½lEVENTO ï¿½7(ï¿½e"
+						+ listener.getClass().getSimpleName() + "ï¿½ffoi carregado com sucesso!");
 			} catch (Exception ex) {
 			}
 		}

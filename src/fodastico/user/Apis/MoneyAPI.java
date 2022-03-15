@@ -7,14 +7,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class MoneyAPI {
 	public static File Moneys;
 	public static FileConfiguration Money;
 
 	public static void createFile1() {
-		MoneyAPI.Moneys = new File("plugins/" + Main.plugin.getDataFolder().getName() + "/Money.yml");
+		MoneyAPI.Moneys = new File("plugins/" + StylePvP.plugin.getDataFolder().getName() + "/Money.yml");
 		MoneyAPI.Money = (FileConfiguration) YamlConfiguration.loadConfiguration(MoneyAPI.Moneys);
 		saveMoney();
 	}

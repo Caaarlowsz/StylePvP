@@ -7,14 +7,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class XpAPI {
 	public static File Xps;
 	public static FileConfiguration Xp;
 
 	public static void createFile1() {
-		XpAPI.Xps = new File("plugins/" + Main.plugin.getDataFolder().getName() + "/Xp.yml");
+		XpAPI.Xps = new File("plugins/" + StylePvP.plugin.getDataFolder().getName() + "/Xp.yml");
 		XpAPI.Xp = (FileConfiguration) YamlConfiguration.loadConfiguration(XpAPI.Xps);
 		saveXp();
 	}

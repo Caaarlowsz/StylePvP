@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class CooldownAPI {
 	public static HashMap<String, Long> pCooldown;
@@ -20,7 +20,7 @@ public class CooldownAPI {
 			CooldownAPI.pCooldown.remove(p.getName());
 		}
 		CooldownAPI.pCooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(tempo));
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				CooldownAPI.removeCooldown(p);
@@ -33,7 +33,7 @@ public class CooldownAPI {
 			CooldownAPI.pCooldown.remove(string);
 		}
 		CooldownAPI.pCooldown.put(string, System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(tempo));
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				CooldownAPI.removeCooldown(string);

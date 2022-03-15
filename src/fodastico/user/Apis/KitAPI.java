@@ -14,7 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Commands.Build;
 import fodastico.user.Warp.WarpsManager;
 import net.md_5.bungee.api.ChatColor;
@@ -44,7 +44,7 @@ public class KitAPI implements Listener {
 		final long cooldownLength = System.currentTimeMillis() + seconds * 1000;
 		KitAPI.noscape.remove(p);
 		KitAPI.noscape.put(p, cooldownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				KitAPI.noscape.remove(p);
@@ -99,7 +99,7 @@ public class KitAPI implements Listener {
 		p.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
 		final ItemStack espadapvp = new ItemStack(Material.DIAMOND_SWORD);
 		final ItemMeta espadapvpmeta = espadapvp.getItemMeta();
-		espadapvpmeta.setDisplayName("§eEspada");
+		espadapvpmeta.setDisplayName("ï¿½eEspada");
 		espadapvp.setItemMeta(espadapvpmeta);
 		espadapvp.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 		p.getInventory().setItem(0, espadapvp);
@@ -171,7 +171,7 @@ public class KitAPI implements Listener {
 		p.getInventory().clear();
 		final ItemStack espadapvp = new ItemStack(Material.DIAMOND_SWORD);
 		final ItemMeta espadapvpmeta = espadapvp.getItemMeta();
-		espadapvpmeta.setDisplayName("§eEspada");
+		espadapvpmeta.setDisplayName("ï¿½eEspada");
 		espadapvp.setItemMeta(espadapvpmeta);
 		espadapvp.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 		p.getInventory().setItem(0, espadapvp);
@@ -195,7 +195,7 @@ public class KitAPI implements Listener {
 		p.getInventory().clear();
 		final ItemStack espadapvp = new ItemStack(Material.DIAMOND_SWORD);
 		final ItemMeta espadapvpmeta = espadapvp.getItemMeta();
-		espadapvpmeta.setDisplayName("§eEspada");
+		espadapvpmeta.setDisplayName("ï¿½eEspada");
 		espadapvp.setItemMeta(espadapvpmeta);
 		espadapvp.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 		p.getInventory().setItem(0, espadapvp);
@@ -235,13 +235,13 @@ public class KitAPI implements Listener {
 		p.getInventory().clear();
 		p.getInventory().setArmorContents((ItemStack[]) null);
 		p.getInventory().setItem(0,
-				APIs.criarItem(p, Material.CHEST, ChatColor.YELLOW + "§lKITS", new String[1], 1, (short) 0));
+				APIs.criarItem(p, Material.CHEST, ChatColor.YELLOW + "ï¿½lKITS", new String[1], 1, (short) 0));
 		p.getInventory().setItem(1,
-				APIs.criarItem(p, Material.COMPASS, ChatColor.YELLOW + "§lWARPS", new String[1], 1, (short) 0));
+				APIs.criarItem(p, Material.COMPASS, ChatColor.YELLOW + "ï¿½lWARPS", new String[1], 1, (short) 0));
 		p.getInventory().setItem(4,
-				APIs.criarItem(p, Material.BOOK, ChatColor.YELLOW + "§lESTATISTICAS", new String[1], 1, (short) 0));
+				APIs.criarItem(p, Material.BOOK, ChatColor.YELLOW + "ï¿½lESTATISTICAS", new String[1], 1, (short) 0));
 		p.getInventory().setItem(8,
-				APIs.criarItem(p, Material.EMERALD, ChatColor.YELLOW + "§lSHOP", new String[1], 1, (short) 0));
+				APIs.criarItem(p, Material.EMERALD, ChatColor.YELLOW + "ï¿½lSHOP", new String[1], 1, (short) 0));
 		setKit(p, "Spawn");
 		Build.Build.put(p.getName(), Build.BuilderMode.FALSE);
 		p.setLevel(0);

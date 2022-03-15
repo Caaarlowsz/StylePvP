@@ -29,7 +29,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Admin.AdminAPI;
 import fodastico.user.Apis.APIs;
 import fodastico.user.Apis.KitAPI;
@@ -58,10 +58,10 @@ public class SubEventos implements Listener {
 	public void onChatFormat(final AsyncPlayerChatEvent e) {
 		final Player jogador = e.getPlayer();
 		if (jogador.hasPermission("kitpvp.colorchat")) {
-			e.setFormat(String.valueOf(jogador.getDisplayName()) + "§7: §f"
-					+ e.getMessage().replace("&", "§").replace("%", "%%"));
+			e.setFormat(String.valueOf(jogador.getDisplayName()) + "ï¿½7: ï¿½f"
+					+ e.getMessage().replace("&", "ï¿½").replace("%", "%%"));
 		} else {
-			e.setFormat(String.valueOf(jogador.getDisplayName()) + "§7: " + e.getMessage().replace("%", "%%"));
+			e.setFormat(String.valueOf(jogador.getDisplayName()) + "ï¿½7: " + e.getMessage().replace("%", "%%"));
 		}
 		if (!jogador.hasPermission("kitpvp.divulca\u00e7ao") && (e.getMessage().contains(".com.br")
 				|| e.getMessage().contains(".com") || e.getMessage().contains("mc.")
@@ -76,7 +76,7 @@ public class SubEventos implements Listener {
 				|| e.getMessage().contains(".server"))) {
 			e.setCancelled(true);
 			jogador.sendMessage(
-					"§b§lDIVULGA\u00c7AO §fVoc\u00ea n\u00e3o possui §4§lPERMISSAO §fpara §9§lDIVULGAR §fIP´s!");
+					"ï¿½bï¿½lDIVULGA\u00c7AO ï¿½fVoc\u00ea n\u00e3o possui ï¿½4ï¿½lPERMISSAO ï¿½fpara ï¿½9ï¿½lDIVULGAR ï¿½fIPï¿½s!");
 		}
 	}
 
@@ -102,14 +102,14 @@ public class SubEventos implements Listener {
 	public void onFlood(final AsyncPlayerChatEvent e) {
 		final Player p = e.getPlayer();
 		if (SubEventos.antflood.contains(e.getPlayer())) {
-			e.getPlayer().sendMessage("§b§lFLOOD §fAguarde para §a§lENVIAR §foutra mensagem.");
+			e.getPlayer().sendMessage("ï¿½bï¿½lFLOOD ï¿½fAguarde para ï¿½aï¿½lENVIAR ï¿½foutra mensagem.");
 			e.setCancelled(true);
 			return;
 		}
 		if (!p.hasPermission("kitpvp.flood")) {
 			SubEventos.antflood.add(e.getPlayer());
 		}
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				if (SubEventos.antflood.contains(p)) {
@@ -126,8 +126,8 @@ public class SubEventos implements Listener {
 			final String cmd = event.getMessage().split(" ")[0];
 			final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(cmd);
 			if (topic == null) {
-				TituloAPI.MandarTitulo(player, "§3§lCOMANDO §f§lINEXISTENTE");
-				player.sendMessage("§b§lCOMANDO §fEste §3§lCOMANDO§f n\u00e3o foi encontrado.");
+				TituloAPI.MandarTitulo(player, "ï¿½3ï¿½lCOMANDO ï¿½fï¿½lINEXISTENTE");
+				player.sendMessage("ï¿½bï¿½lCOMANDO ï¿½fEste ï¿½3ï¿½lCOMANDOï¿½f n\u00e3o foi encontrado.");
 				player.playSound(player.getLocation(), Sound.ITEM_BREAK, 1.0f, 1.0f);
 				event.setCancelled(true);
 			}
@@ -138,7 +138,7 @@ public class SubEventos implements Listener {
 	public void ssblockcmd(final PlayerCommandPreprocessEvent event) {
 		final Player p = event.getPlayer();
 		if (Ss.inss.contains(p)) {
-			p.sendMessage("§4§lSCREENSHARE §fVoc\u00ea n\u00e3o pode executar §3§lCOMANDOS §fem §c§lSCREENSHARE");
+			p.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea n\u00e3o pode executar ï¿½3ï¿½lCOMANDOS ï¿½fem ï¿½cï¿½lSCREENSHARE");
 			event.setCancelled(true);
 		}
 	}
@@ -148,7 +148,7 @@ public class SubEventos implements Listener {
 		final Player p = event.getPlayer();
 		if (Ss.inss.contains(p)) {
 			Bukkit.broadcastMessage(
-					"§4§lSCREENSHARE §fO jogador §1§l" + p.getName() + " §e§lDESLOGOU §fem §c§lSCREENSHARE");
+					"ï¿½4ï¿½lSCREENSHARE ï¿½fO jogador ï¿½1ï¿½l" + p.getName() + " ï¿½eï¿½lDESLOGOU ï¿½fem ï¿½cï¿½lSCREENSHARE");
 			Ss.inss.remove(p);
 		}
 	}
@@ -171,7 +171,7 @@ public class SubEventos implements Listener {
 		for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 			final Player jogadores = onlinePlayers[i];
 			if (Ss.sscheckname.containsKey(jogadores)) {
-				p.sendMessage("§c§l(!)SCREENSHARE EM ANDAMENTO §7- §fJogador(a): §e§l" + Ss.sscheckname.get(jogadores));
+				p.sendMessage("ï¿½cï¿½l(!)SCREENSHARE EM ANDAMENTO ï¿½7- ï¿½fJogador(a): ï¿½eï¿½l" + Ss.sscheckname.get(jogadores));
 				p.sendMessage(" ");
 			}
 		}
@@ -203,7 +203,7 @@ public class SubEventos implements Listener {
 		final Player p = e.getPlayer();
 		if (Chat.pausado && !p.hasPermission("kitpvp.falarchat")) {
 			e.setCancelled(true);
-			p.sendMessage("§4§lCHAT §fO §c§lCHAT §fdo servidor est\u00e1 §cDESATIVADO§f.");
+			p.sendMessage("ï¿½4ï¿½lCHAT ï¿½fO ï¿½cï¿½lCHAT ï¿½fdo servidor est\u00e1 ï¿½cDESATIVADOï¿½f.");
 		}
 	}
 
@@ -212,7 +212,7 @@ public class SubEventos implements Listener {
 		final Player p = e.getPlayer();
 		if (KitAPI.getkit(p) == "Admin" && p.getItemInHand().getType() == Material.getMaterial(351)) {
 			p.chat("/admin");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
@@ -246,7 +246,7 @@ public class SubEventos implements Listener {
 				t.getWorld().spawnEntity(t.getLocation(), EntityType.BAT);
 				t.getWorld().spawnEntity(t.getLocation(), EntityType.BAT);
 				t.getWorld().spawnEntity(t.getLocation(), EntityType.BAT);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						final String world = t.getWorld().getName();
@@ -262,7 +262,7 @@ public class SubEventos implements Listener {
 				final Player t = (Player) e.getRightClicked();
 				if (AdminAPI.autoSoupChecking.contains(t)) {
 					p.sendMessage(
-							"§c§lADMIN §fOutro §d§lSTAFFER §fj\u00e1 est\u00e1 §e§lCHECANDO §fauto-soup neste jogador.");
+							"ï¿½cï¿½lADMIN ï¿½fOutro ï¿½dï¿½lSTAFFER ï¿½fj\u00e1 est\u00e1 ï¿½eï¿½lCHECANDO ï¿½fauto-soup neste jogador.");
 					return;
 				}
 				SubEventos.inventario.put(t, t.getInventory().getContents());
@@ -271,52 +271,52 @@ public class SubEventos implements Listener {
 				AdminAPI.autoSoupChecking.add(t);
 				p.openInventory((Inventory) t.getInventory());
 				t.getInventory().setItem(18,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(19,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(20,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(21,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(22,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(23,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(24,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(25,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				t.getInventory().setItem(26,
-						APIs.criarItem(p, Material.MUSHROOM_SOUP, "§cSopa", new String[] { "" }, 1, (short) 0));
+						APIs.criarItem(p, Material.MUSHROOM_SOUP, "ï¿½cSopa", new String[] { "" }, 1, (short) 0));
 				p.sendMessage(" ");
-				p.sendMessage("§3§lADMIN §fTestando auto-soup em §7" + t.getName());
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				p.sendMessage("ï¿½3ï¿½lADMIN ï¿½fTestando auto-soup em ï¿½7" + t.getName());
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (SubEventos.getAmount(t, Material.BOWL) == 1) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §c§lPROVAVELMENTE §fest\u00e1 de auto-soup! (1 sopa tomada)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½cï¿½lPROVAVELMENTE ï¿½fest\u00e1 de auto-soup! (1 sopa tomada)");
 						} else if (SubEventos.getAmount(t, Material.BOWL) == 2) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §c§lCERTAMENTE §fest\u00e1 de auto-soup! (2 sopas tomadas)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½cï¿½lCERTAMENTE ï¿½fest\u00e1 de auto-soup! (2 sopas tomadas)");
 						} else if (SubEventos.getAmount(t, Material.BOWL) == 3) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §4§lDEFINITIVAMENTE §fest\u00e1 de auto-soup! (3 sopas tomadas)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½4ï¿½lDEFINITIVAMENTE ï¿½fest\u00e1 de auto-soup! (3 sopas tomadas)");
 						} else if (SubEventos.getAmount(t, Material.BOWL) == 4) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §4§lDEFINITIVAMENTE §fest\u00e1 de auto-soup! (4 sopas tomadas)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½4ï¿½lDEFINITIVAMENTE ï¿½fest\u00e1 de auto-soup! (4 sopas tomadas)");
 						} else if (SubEventos.getAmount(t, Material.BOWL) >= 5) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §4§lDEFINITIVAMENTE §fest\u00e1 de auto-soup! (5 sopas tomadas)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½4ï¿½lDEFINITIVAMENTE ï¿½fest\u00e1 de auto-soup! (5 sopas tomadas)");
 						} else if (SubEventos.getAmount(t, Material.BOWL) == 0) {
 							p.sendMessage(" ");
 							p.sendMessage(
-									"§c§lADMIN §fO jogador §a§lN\u00c3O §fest\u00e1 de auto-soup! (0 sopas tomadas)");
+									"ï¿½cï¿½lADMIN ï¿½fO jogador ï¿½aï¿½lN\u00c3O ï¿½fest\u00e1 de auto-soup! (0 sopas tomadas)");
 						}
 						AdminAPI.autoSoupChecking.remove(t);
 						t.getInventory().clear();
@@ -357,8 +357,8 @@ public class SubEventos implements Listener {
 	public void onStaffChatEvent(final AsyncPlayerChatEvent e) {
 		final Player p = e.getPlayer();
 		if (Sc.inStaffChat.contains(p.getName())) {
-			Bukkit.broadcast("§d[§d§lSTAFF§d] " + p.getDisplayName() + " §8» §e"
-					+ e.getMessage().replace("&", "§").replace("%", "%%"), "kitpvp.sc");
+			Bukkit.broadcast("ï¿½d[ï¿½dï¿½lSTAFFï¿½d] " + p.getDisplayName() + " ï¿½8ï¿½ ï¿½e"
+					+ e.getMessage().replace("&", "ï¿½").replace("%", "%%"), "kitpvp.sc");
 			e.setCancelled(true);
 		}
 	}
@@ -376,12 +376,12 @@ public class SubEventos implements Listener {
 					parar = true;
 					e.getPlayer().setCompassTarget(entidades.getLocation());
 					e.getPlayer().sendMessage(
-							"§b§lBUSSOLA §fB\u00fassola apontando para §3§l" + ((Player) entidades).getName());
+							"ï¿½bï¿½lBUSSOLA ï¿½fB\u00fassola apontando para ï¿½3ï¿½l" + ((Player) entidades).getName());
 					return;
 				}
 			}
 			if (!parar) {
-				e.getPlayer().sendMessage("§b§lBUSSOLA §fNenhum jogador foi encontrado.");
+				e.getPlayer().sendMessage("ï¿½bï¿½lBUSSOLA ï¿½fNenhum jogador foi encontrado.");
 				e.getPlayer().setCompassTarget(new Location(e.getPlayer().getWorld(), 0.0, 100.0, 0.0));
 			}
 		}
@@ -408,7 +408,7 @@ public class SubEventos implements Listener {
 		if (e.getDamager() instanceof Player) {
 			final Player d = (Player) e.getEntity();
 			SubEventos.combate.add(d);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					SubEventos.combate.remove(d);
@@ -441,7 +441,7 @@ public class SubEventos implements Listener {
 
 	public static void removeCooldownXp(final Player p) {
 		if (Doublexp.delaydoublexp.contains(p.getName())) {
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					TimeAPI.removeTempo(p.getName());
@@ -455,7 +455,7 @@ public class SubEventos implements Listener {
 	public static void sendMsg(final Player p) {
 		if (p.isOnline()) {
 			p.sendMessage(
-					"§9§lDOUBLEXP §fVoc\u00ea saiu de §c§lCOOLDOWN§f! Se quiser, j\u00e1 pode §a§lUSAR§f outro §b§lDOUBLEXP §fnovamente caso ainda possua!");
+					"ï¿½9ï¿½lDOUBLEXP ï¿½fVoc\u00ea saiu de ï¿½cï¿½lCOOLDOWNï¿½f! Se quiser, j\u00e1 pode ï¿½aï¿½lUSARï¿½f outro ï¿½bï¿½lDOUBLEXP ï¿½fnovamente caso ainda possua!");
 		}
 	}
 }

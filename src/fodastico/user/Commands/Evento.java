@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.EventoAPI;
 
 public class Evento implements CommandExecutor {
@@ -20,112 +20,112 @@ public class Evento implements CommandExecutor {
 			return false;
 		}
 		if (!p.hasPermission("kitpvp.evento")) {
-			p.sendMessage("§e§lPERMISSAO §fVoc\u00ea n\u00e3o possui §4§lPERMISSAO §fpara executar este §3§lCOMANDO.");
+			p.sendMessage("ï¿½eï¿½lPERMISSAO ï¿½fVoc\u00ea n\u00e3o possui ï¿½4ï¿½lPERMISSAO ï¿½fpara executar este ï¿½3ï¿½lCOMANDO.");
 			return true;
 		}
 		if (args.length == 0) {
-			p.sendMessage("§6§lEVENTO §fUtilize: /evento <iniciar> <desligar>");
+			p.sendMessage("ï¿½6ï¿½lEVENTO ï¿½fUtilize: /evento <iniciar> <desligar>");
 			return true;
 		}
 		if (args.length == 1) {
 			if (args[0].equalsIgnoreCase("iniciar")) {
 				if (EventoAPI.onEvent) {
-					p.sendMessage("§6§lEVENTO §fJa possui um §e§lEVENTO §fem andamento!");
+					p.sendMessage("ï¿½6ï¿½lEVENTO ï¿½fJa possui um ï¿½eï¿½lEVENTO ï¿½fem andamento!");
 					return true;
 				}
-				p.sendMessage("§6§lEVENTO §fVoc\u00ea §a§lLIGOU §fum §e§lEVENTO§f!");
+				p.sendMessage("ï¿½6ï¿½lEVENTO ï¿½fVoc\u00ea ï¿½aï¿½lLIGOU ï¿½fum ï¿½eï¿½lEVENTOï¿½f!");
 				Bukkit.broadcastMessage(" ");
 				Bukkit.broadcastMessage(
-						"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar!");
+						"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar!");
 				Bukkit.broadcastMessage(" ");
 				EventoAPI.onEvent = true;
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l30 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l30 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 100L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l25 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l25 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 200L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l20 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l20 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 300L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l15 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l15 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 400L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l10 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l10 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 500L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fUm §e§lEVENTO §fest\u00e1 iniciando agora! §fUtilize: /warp evento para participar! §c§l5 SEGUNDOS RESTANTES!");
+									"ï¿½6ï¿½lEVENTO ï¿½fUm ï¿½eï¿½lEVENTO ï¿½fest\u00e1 iniciando agora! ï¿½fUtilize: /warp evento para participar! ï¿½cï¿½l5 SEGUNDOS RESTANTES!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 600L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						if (EventoAPI.onEvent) {
 							EventoAPI.closeEvent = true;
 							Bukkit.broadcastMessage(" ");
 							Bukkit.broadcastMessage(
-									"§6§lEVENTO §fA §a§lENTRADA §fpara o §e§lEVENTO §ffoi §c§lFECHADA§f!");
+									"ï¿½6ï¿½lEVENTO ï¿½fA ï¿½aï¿½lENTRADA ï¿½fpara o ï¿½eï¿½lEVENTO ï¿½ffoi ï¿½cï¿½lFECHADAï¿½f!");
 							Bukkit.broadcastMessage(" ");
 						}
 					}
 				}, 700L);
 			} else if (args[0].equalsIgnoreCase("desligar")) {
 				if (!EventoAPI.onEvent) {
-					p.sendMessage("§6§lEVENTO §fNenhum §e§lEVENTO §fest\u00e1 em andamento!");
+					p.sendMessage("ï¿½6ï¿½lEVENTO ï¿½fNenhum ï¿½eï¿½lEVENTO ï¿½fest\u00e1 em andamento!");
 					return true;
 				}
 				EventoAPI.onEvent = false;
 				EventoAPI.closeEvent = false;
 				Bukkit.broadcastMessage(" ");
-				Bukkit.broadcastMessage("§6§lEVENTO §fO §e§lEVENTO §ffoi §a§lFINALIZADO§f!");
+				Bukkit.broadcastMessage("ï¿½6ï¿½lEVENTO ï¿½fO ï¿½eï¿½lEVENTO ï¿½ffoi ï¿½aï¿½lFINALIZADOï¿½f!");
 				Bukkit.broadcastMessage(" ");
 				EventoAPI.quitEvent();
 				return true;

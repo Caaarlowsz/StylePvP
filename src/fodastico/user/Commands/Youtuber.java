@@ -5,36 +5,36 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class Youtuber implements CommandExecutor {
 	public boolean onCommand(final CommandSender Sender, final Command Cmd, final String Label, final String[] Args) {
 		if (!(Sender instanceof Player)) {
-			Sender.sendMessage("§cVoc\u00ea n\u00e3o \u00e9 um jogador.");
+			Sender.sendMessage("ï¿½cVoc\u00ea n\u00e3o \u00e9 um jogador.");
 			return false;
 		}
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("youtuber")) {
 			p.sendMessage(" ");
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-1").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-2").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-3").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-4").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-5").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-6").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-7").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-8").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-9").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-10").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-11").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-12").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-13").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-14").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-15").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-16").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-17").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-18").replace("&", "§"));
-			p.sendMessage(Main.getInstance().getConfig().getString("MSG-YT-19").replace("&", "§"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-1").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-2").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-3").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-4").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-5").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-6").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-7").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-8").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-9").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-10").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-11").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-12").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-13").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-14").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-15").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-16").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-17").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-18").replace("&", "ï¿½"));
+			p.sendMessage(StylePvP.getInstance().getConfig().getString("MSG-YT-19").replace("&", "ï¿½"));
 			p.sendMessage(" ");
 		}
 		return false;

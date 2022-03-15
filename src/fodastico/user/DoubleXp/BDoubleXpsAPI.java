@@ -7,14 +7,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class BDoubleXpsAPI {
 	public static File Doublexps;
 	public static FileConfiguration Doublexp;
 
 	public static void createFile1() {
-		BDoubleXpsAPI.Doublexps = new File("plugins/" + Main.plugin.getDataFolder().getName() + "/BDoubleXps.yml");
+		BDoubleXpsAPI.Doublexps = new File("plugins/" + StylePvP.plugin.getDataFolder().getName() + "/BDoubleXps.yml");
 		BDoubleXpsAPI.Doublexp = (FileConfiguration) YamlConfiguration.loadConfiguration(BDoubleXpsAPI.Doublexps);
 		saveDoubleXps();
 	}

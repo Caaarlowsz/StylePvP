@@ -9,7 +9,7 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.APIs;
 import fodastico.user.Apis.DeathAPI;
 import fodastico.user.Apis.KillsAPI;
@@ -27,11 +27,11 @@ public class ScoreBoard implements Listener {
 	private static String ninguem;
 
 	static {
-		ScoreBoard.ninguem = "§3Ningu\u00e9m";
+		ScoreBoard.ninguem = "ï¿½3Ningu\u00e9m";
 	}
 
 	public void run() {
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Player[] onlinePlayers;
@@ -53,36 +53,36 @@ public class ScoreBoard implements Listener {
 	public static String getRankName(final Player p) {
 		final int r = XpAPI.getXp(p);
 		if (r <= 99) {
-			return "§f- UNRANKED";
+			return "ï¿½f- UNRANKED";
 		}
 		if (r >= 100 && r <= 499) {
-			return "§a\u2630 PRIMARY";
+			return "ï¿½a\u2630 PRIMARY";
 		}
 		if (r >= 500 && r <= 999) {
-			return "§e\u2634 ADVANCED";
+			return "ï¿½e\u2634 ADVANCED";
 		}
 		if (r >= 1000 && r <= 1499) {
-			return "§1\u2637 EXPERT";
+			return "ï¿½1\u2637 EXPERT";
 		}
 		if (r >= 1500 && r <= 1999) {
-			return "§7\u2736 SILVER";
+			return "ï¿½7\u2736 SILVER";
 		}
 		if (r >= 2000 && r <= 2999) {
-			return "§6\u2739 GOLD";
+			return "ï¿½6\u2739 GOLD";
 		}
 		if (r >= 3000 && r <= 4000) {
-			return "§b\u2726 DIAMOND";
+			return "ï¿½b\u2726 DIAMOND";
 		}
 		if (r >= 5000 && r <= 5999) {
-			return "§5\u2739 ELITE";
+			return "ï¿½5\u2739 ELITE";
 		}
 		if (r >= 6000 && r <= 6999) {
-			return "§c\u272b MASTER";
+			return "ï¿½c\u272b MASTER";
 		}
 		if (r >= 7000 && r <= 10000) {
-			return "§4\u272a LEGENDARY";
+			return "ï¿½4\u272a LEGENDARY";
 		}
-		return "§4\u272a LEGENDARY";
+		return "ï¿½4\u272a LEGENDARY";
 	}
 
 	public static String Oponente(final Player p) {
@@ -112,36 +112,36 @@ public class ScoreBoard implements Listener {
 	public static String getRankNick(final Player p) {
 		final int r = XpAPI.getXp(p);
 		if (r <= 99) {
-			return " §7(§f-§7)";
+			return " ï¿½7(ï¿½f-ï¿½7)";
 		}
 		if (r >= 100 && r <= 499) {
-			return " §7(§a\u2630§7)";
+			return " ï¿½7(ï¿½a\u2630ï¿½7)";
 		}
 		if (r >= 500 && r <= 999) {
-			return " §7(§e\u2634§7)";
+			return " ï¿½7(ï¿½e\u2634ï¿½7)";
 		}
 		if (r >= 1000 && r <= 1499) {
-			return " §7(§1\u2637§7)";
+			return " ï¿½7(ï¿½1\u2637ï¿½7)";
 		}
 		if (r >= 1500 && r <= 1999) {
-			return " §7(§7\u2736§7)";
+			return " ï¿½7(ï¿½7\u2736ï¿½7)";
 		}
 		if (r >= 2000 && r <= 2999) {
-			return " §7(§6\u2739§7)";
+			return " ï¿½7(ï¿½6\u2739ï¿½7)";
 		}
 		if (r >= 3000 && r <= 4000) {
-			return " §7(§b\u2726§7)";
+			return " ï¿½7(ï¿½b\u2726ï¿½7)";
 		}
 		if (r >= 5000 && r <= 5999) {
-			return " §7(§5\u2739§7)";
+			return " ï¿½7(ï¿½5\u2739ï¿½7)";
 		}
 		if (r >= 6000 && r <= 6999) {
-			return " §7(§c\u272b§7)";
+			return " ï¿½7(ï¿½c\u272bï¿½7)";
 		}
 		if (r >= 7000 && r <= 10000) {
-			return " §7(§4\u272a§7)";
+			return " ï¿½7(ï¿½4\u272aï¿½7)";
 		}
-		return " §7(§4\u272a§7)";
+		return " ï¿½7(ï¿½4\u272aï¿½7)";
 	}
 
 	public static void UpdatePVP(final Player p) {
@@ -151,30 +151,30 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName(Main.an.getText());
+						p.getScoreboard().getObjective("sbanimado").setDisplayName(StylePvP.an.getText());
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team kit = p.getScoreboard().getTeam("line3");
-						kit.setPrefix("§fKit: ");
-						kit.setSuffix("§e" + KitAPI.getkit(p));
+						kit.setPrefix("ï¿½fKit: ");
+						kit.setSuffix("ï¿½e" + KitAPI.getkit(p));
 						final Team xp = p.getScoreboard().getTeam("line5");
-						xp.setPrefix("§fXP: ");
-						xp.setSuffix("§7" + XpAPI.getXp(p));
+						xp.setPrefix("ï¿½fXP: ");
+						xp.setSuffix("ï¿½7" + XpAPI.getXp(p));
 						final Team liga = p.getScoreboard().getTeam("line6");
-						liga.setPrefix("§fLiga: ");
-						liga.setSuffix("§7" + ScoreBoard.getRankName(p));
+						liga.setPrefix("ï¿½fLiga: ");
+						liga.setSuffix("ï¿½7" + ScoreBoard.getRankName(p));
 						final Team streak = p.getScoreboard().getTeam("line8");
-						streak.setPrefix("§fStreak: ");
-						streak.setSuffix("§7" + TopKsAPI.getStreak(p));
+						streak.setPrefix("ï¿½fStreak: ");
+						streak.setSuffix("ï¿½7" + TopKsAPI.getStreak(p));
 						final Team deaths = p.getScoreboard().getTeam("line9");
-						deaths.setPrefix("§fDeaths: ");
-						deaths.setSuffix("§7" + DeathAPI.getDeath(p));
+						deaths.setPrefix("ï¿½fDeaths: ");
+						deaths.setSuffix("ï¿½7" + DeathAPI.getDeath(p));
 						final Team kills = p.getScoreboard().getTeam("line10");
-						kills.setPrefix("§fKills: ");
-						kills.setSuffix("§7" + KillsAPI.getKills(p));
+						kills.setPrefix("ï¿½fKills: ");
+						kills.setSuffix("ï¿½7" + KillsAPI.getKills(p));
 					}
 				}
 			});
@@ -188,27 +188,27 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName(Main.an.getText1v1());
+						p.getScoreboard().getObjective("sbanimado").setDisplayName(StylePvP.an.getText1v1());
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team xp = p.getScoreboard().getTeam("line3");
-						xp.setPrefix("§fXP: ");
-						xp.setSuffix("§7" + XpAPI.getXp(p));
+						xp.setPrefix("ï¿½fXP: ");
+						xp.setSuffix("ï¿½7" + XpAPI.getXp(p));
 						final Team liga = p.getScoreboard().getTeam("line4");
-						liga.setPrefix("§fLiga: ");
+						liga.setPrefix("ï¿½fLiga: ");
 						liga.setSuffix(new StringBuilder().append(ScoreBoard.getRankName(p)).toString());
 						final Team streak = p.getScoreboard().getTeam("line6");
-						streak.setPrefix("§fStreak: ");
-						streak.setSuffix("§7" + TopKsAPI.getStreak(p));
+						streak.setPrefix("ï¿½fStreak: ");
+						streak.setSuffix("ï¿½7" + TopKsAPI.getStreak(p));
 						final Team deaths = p.getScoreboard().getTeam("line7");
-						deaths.setPrefix("§fDeaths: ");
-						deaths.setSuffix("§7" + DeathAPI.getDeath(p));
+						deaths.setPrefix("ï¿½fDeaths: ");
+						deaths.setSuffix("ï¿½7" + DeathAPI.getDeath(p));
 						final Team kills = p.getScoreboard().getTeam("line8");
-						kills.setPrefix("§fKills: ");
-						kills.setSuffix("§7" + KillsAPI.getKills(p));
+						kills.setPrefix("ï¿½fKills: ");
+						kills.setSuffix("ï¿½7" + KillsAPI.getKills(p));
 					}
 				}
 			});
@@ -222,30 +222,30 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName(Main.an.getTextSs());
+						p.getScoreboard().getObjective("sbanimado").setDisplayName(StylePvP.an.getTextSs());
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team linha3 = p.getScoreboard().getTeam("line3");
-						linha3.setPrefix("§cser\u00e1 libera");
-						linha3.setSuffix("§cdo!");
+						linha3.setPrefix("ï¿½cser\u00e1 libera");
+						linha3.setSuffix("ï¿½cdo!");
 						final Team linha4 = p.getScoreboard().getTeam("line4");
-						linha4.setPrefix("§cCaso voc\u00ea es");
-						linha4.setSuffix("§cteja limpo,");
+						linha4.setPrefix("ï¿½cCaso voc\u00ea es");
+						linha4.setSuffix("ï¿½cteja limpo,");
 						final Team linha5 = p.getScoreboard().getTeam("line6");
-						linha5.setPrefix("§cSiga os pass");
-						linha5.setSuffix("§cos do staff!");
+						linha5.setPrefix("ï¿½cSiga os pass");
+						linha5.setSuffix("ï¿½cos do staff!");
 						final Team linha6 = p.getScoreboard().getTeam("line7");
-						linha6.setPrefix("§csuspeito de ");
-						linha6.setSuffix("§cuso de hack!");
+						linha6.setPrefix("ï¿½csuspeito de ");
+						linha6.setSuffix("ï¿½cuso de hack!");
 						final Team linha7 = p.getScoreboard().getTeam("line8");
-						linha7.setPrefix("§cVoc\u00ea ser\u00e1 tel");
-						linha7.setSuffix("§cado por ser");
+						linha7.setPrefix("ï¿½cVoc\u00ea ser\u00e1 tel");
+						linha7.setSuffix("ï¿½cado por ser");
 						final Team linha8 = p.getScoreboard().getTeam("line9");
-						linha8.setPrefix("§cN\u00e3o deslogue");
-						linha8.setSuffix("§c!");
+						linha8.setPrefix("ï¿½cN\u00e3o deslogue");
+						linha8.setSuffix("ï¿½c!");
 					}
 				}
 			});
@@ -259,30 +259,30 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName(Main.an.getTextSs());
+						p.getScoreboard().getObjective("sbanimado").setDisplayName(StylePvP.an.getTextSs());
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team linha3 = p.getScoreboard().getTeam("line3");
-						linha3.setPrefix("§7spawn e volt");
-						linha3.setSuffix("§7e a moderar!");
+						linha3.setPrefix("ï¿½7spawn e volt");
+						linha3.setSuffix("ï¿½7e a moderar!");
 						final Team linha4 = p.getScoreboard().getTeam("line4");
-						linha4.setPrefix("§7Ap\u00f3s ser lib");
-						linha4.setSuffix("§7erado, v\u00e1 no");
+						linha4.setPrefix("ï¿½7Ap\u00f3s ser lib");
+						linha4.setSuffix("ï¿½7erado, v\u00e1 no");
 						final Team linha5 = p.getScoreboard().getTeam("line6");
-						linha5.setPrefix("§7concluir a s");
-						linha5.setSuffix("§7creenshare!");
+						linha5.setPrefix("ï¿½7concluir a s");
+						linha5.setSuffix("ï¿½7creenshare!");
 						final Team linha6 = p.getScoreboard().getTeam("line7");
-						linha6.setPrefix("§7e de modo al");
-						linha6.setSuffix("§7gum saia sem");
+						linha6.setPrefix("ï¿½7e de modo al");
+						linha6.setSuffix("ï¿½7gum saia sem");
 						final Team linha7 = p.getScoreboard().getTeam("line8");
-						linha7.setPrefix("§7Realize os p");
-						linha7.setSuffix("§7rocedimentos");
+						linha7.setPrefix("ï¿½7Realize os p");
+						linha7.setSuffix("ï¿½7rocedimentos");
 						final Team linha8 = p.getScoreboard().getTeam("line9");
-						linha8.setPrefix("§7Voc\u00ea puxou u");
-						linha8.setSuffix("§7m player!");
+						linha8.setPrefix("ï¿½7Voc\u00ea puxou u");
+						linha8.setSuffix("ï¿½7m player!");
 					}
 				}
 			});
@@ -297,20 +297,20 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName(Main.an.getTextVanish());
+						p.getScoreboard().getObjective("sbanimado").setDisplayName(StylePvP.an.getTextVanish());
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team on = p.getScoreboard().getTeam("line3");
-						on.setPrefix("§7Online: ");
-						on.setSuffix("§a" + online);
+						on.setPrefix("ï¿½7Online: ");
+						on.setSuffix("ï¿½a" + online);
 						final Team vanish = p.getScoreboard().getTeam("line5");
-						vanish.setPrefix("§3MODO ");
-						vanish.setSuffix("§3VANISH");
+						vanish.setPrefix("ï¿½3MODO ");
+						vanish.setSuffix("ï¿½3VANISH");
 						final Team group = p.getScoreboard().getTeam("line7");
-						group.setPrefix("§7Grupo: ");
+						group.setPrefix("ï¿½7Grupo: ");
 						group.setSuffix(APIs.Grupo(p));
 					}
 				}
@@ -325,17 +325,17 @@ public class ScoreBoard implements Listener {
 				@Override
 				public void run() {
 					if (Score.ativada.contains(p.getName())) {
-						p.getScoreboard().getObjective("sbanimado").setDisplayName("§e§lEVENTO");
+						p.getScoreboard().getObjective("sbanimado").setDisplayName("ï¿½eï¿½lEVENTO");
 						final Team site = p.getScoreboard().getTeam("line1");
 						site.setPrefix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-PREFIX").replace("&", "ï¿½"));
 						site.setSuffix(
-								Main.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "§"));
+								StylePvP.getInstance().getConfig().getString("MSITE-SCORE-SUFFIX").replace("&", "ï¿½"));
 						final Team xp = p.getScoreboard().getTeam("line3");
-						xp.setPrefix("§fXP: ");
-						xp.setSuffix("§7" + XpAPI.getXp(p));
+						xp.setPrefix("ï¿½fXP: ");
+						xp.setSuffix("ï¿½7" + XpAPI.getXp(p));
 						final Team liga = p.getScoreboard().getTeam("line4");
-						liga.setPrefix("§fLiga: ");
+						liga.setPrefix("ï¿½fLiga: ");
 						liga.setSuffix(ScoreBoard.getRankName(p));
 					}
 				}
@@ -349,7 +349,7 @@ public class ScoreBoard implements Listener {
 			final Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
 			final Objective obj = sb.registerNewObjective("sbanimado", "dummy");
 			obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-			obj.setDisplayName("§6LOADING");
+			obj.setDisplayName("ï¿½6LOADING");
 			final Team t1 = sb.registerNewTeam("line1");
 			final Team t2 = sb.registerNewTeam("line3");
 			final Team t3 = sb.registerNewTeam("line4");
@@ -361,123 +361,123 @@ public class ScoreBoard implements Listener {
 			final Team t9 = sb.registerNewTeam("line10");
 			final Team t10 = sb.registerNewTeam("line11");
 			if (KitAPI.getkit(p) == "1v1") {
-				final FastOfflinePlayer f1 = new FastOfflinePlayer("§1");
+				final FastOfflinePlayer f1 = new FastOfflinePlayer("ï¿½1");
 				obj.getScore((OfflinePlayer) f1).setScore(1);
 				t1.addPlayer((OfflinePlayer) f1);
-				final FastOfflinePlayer f2 = new FastOfflinePlayer("§2");
+				final FastOfflinePlayer f2 = new FastOfflinePlayer("ï¿½2");
 				obj.getScore((OfflinePlayer) f2).setScore(2);
-				final FastOfflinePlayer f3 = new FastOfflinePlayer("§3");
+				final FastOfflinePlayer f3 = new FastOfflinePlayer("ï¿½3");
 				obj.getScore((OfflinePlayer) f3).setScore(3);
 				t2.addPlayer((OfflinePlayer) f3);
-				final FastOfflinePlayer f4 = new FastOfflinePlayer("§4");
+				final FastOfflinePlayer f4 = new FastOfflinePlayer("ï¿½4");
 				obj.getScore((OfflinePlayer) f4).setScore(4);
 				t3.addPlayer((OfflinePlayer) f4);
-				final FastOfflinePlayer f5 = new FastOfflinePlayer("§5");
+				final FastOfflinePlayer f5 = new FastOfflinePlayer("ï¿½5");
 				obj.getScore((OfflinePlayer) f5).setScore(5);
-				final FastOfflinePlayer f6 = new FastOfflinePlayer("§6");
+				final FastOfflinePlayer f6 = new FastOfflinePlayer("ï¿½6");
 				obj.getScore((OfflinePlayer) f6).setScore(6);
 				t5.addPlayer((OfflinePlayer) f6);
-				final FastOfflinePlayer f7 = new FastOfflinePlayer("§7");
+				final FastOfflinePlayer f7 = new FastOfflinePlayer("ï¿½7");
 				obj.getScore((OfflinePlayer) f7).setScore(7);
 				t6.addPlayer((OfflinePlayer) f7);
-				final FastOfflinePlayer f8 = new FastOfflinePlayer("§8");
+				final FastOfflinePlayer f8 = new FastOfflinePlayer("ï¿½8");
 				obj.getScore((OfflinePlayer) f8).setScore(8);
 				t7.addPlayer((OfflinePlayer) f8);
-				final FastOfflinePlayer f9 = new FastOfflinePlayer("§9");
+				final FastOfflinePlayer f9 = new FastOfflinePlayer("ï¿½9");
 				obj.getScore((OfflinePlayer) f9).setScore(9);
 			} else if (KitAPI.getkit(p) == "Admin") {
-				final FastOfflinePlayer f1 = new FastOfflinePlayer("§c");
+				final FastOfflinePlayer f1 = new FastOfflinePlayer("ï¿½c");
 				obj.getScore((OfflinePlayer) f1).setScore(1);
 				t1.addPlayer((OfflinePlayer) f1);
-				final FastOfflinePlayer f2 = new FastOfflinePlayer("§7");
+				final FastOfflinePlayer f2 = new FastOfflinePlayer("ï¿½7");
 				obj.getScore((OfflinePlayer) f2).setScore(2);
-				final FastOfflinePlayer f3 = new FastOfflinePlayer("§b");
+				final FastOfflinePlayer f3 = new FastOfflinePlayer("ï¿½b");
 				obj.getScore((OfflinePlayer) f3).setScore(3);
 				t2.addPlayer((OfflinePlayer) f3);
-				final FastOfflinePlayer f4 = new FastOfflinePlayer("§1");
+				final FastOfflinePlayer f4 = new FastOfflinePlayer("ï¿½1");
 				obj.getScore((OfflinePlayer) f4).setScore(4);
-				final FastOfflinePlayer f5 = new FastOfflinePlayer("§4");
+				final FastOfflinePlayer f5 = new FastOfflinePlayer("ï¿½4");
 				obj.getScore((OfflinePlayer) f5).setScore(5);
 				t4.addPlayer((OfflinePlayer) f5);
 				t4.addPlayer((OfflinePlayer) f5);
-				final FastOfflinePlayer f6 = new FastOfflinePlayer("§2");
+				final FastOfflinePlayer f6 = new FastOfflinePlayer("ï¿½2");
 				obj.getScore((OfflinePlayer) f6).setScore(6);
-				final FastOfflinePlayer f7 = new FastOfflinePlayer("§3");
+				final FastOfflinePlayer f7 = new FastOfflinePlayer("ï¿½3");
 				obj.getScore((OfflinePlayer) f7).setScore(7);
 				t6.addPlayer((OfflinePlayer) f7);
-				final FastOfflinePlayer f8 = new FastOfflinePlayer("§0");
+				final FastOfflinePlayer f8 = new FastOfflinePlayer("ï¿½0");
 				obj.getScore((OfflinePlayer) f8).setScore(8);
 			} else if (KitAPI.getkit(p) == "Evento") {
-				final FastOfflinePlayer f1 = new FastOfflinePlayer("§c");
+				final FastOfflinePlayer f1 = new FastOfflinePlayer("ï¿½c");
 				obj.getScore((OfflinePlayer) f1).setScore(1);
 				t1.addPlayer((OfflinePlayer) f1);
-				final FastOfflinePlayer f2 = new FastOfflinePlayer("§7");
+				final FastOfflinePlayer f2 = new FastOfflinePlayer("ï¿½7");
 				obj.getScore((OfflinePlayer) f2).setScore(2);
-				final FastOfflinePlayer f3 = new FastOfflinePlayer("§b");
+				final FastOfflinePlayer f3 = new FastOfflinePlayer("ï¿½b");
 				obj.getScore((OfflinePlayer) f3).setScore(3);
 				t2.addPlayer((OfflinePlayer) f3);
-				final FastOfflinePlayer f4 = new FastOfflinePlayer("§1");
+				final FastOfflinePlayer f4 = new FastOfflinePlayer("ï¿½1");
 				obj.getScore((OfflinePlayer) f4).setScore(4);
 				t3.addPlayer((OfflinePlayer) f4);
-				final FastOfflinePlayer f5 = new FastOfflinePlayer("§4");
+				final FastOfflinePlayer f5 = new FastOfflinePlayer("ï¿½4");
 				obj.getScore((OfflinePlayer) f5).setScore(5);
 			} else if (KitAPI.getkit(p) == "ScreenShare") {
-				final FastOfflinePlayer f1 = new FastOfflinePlayer("§1");
+				final FastOfflinePlayer f1 = new FastOfflinePlayer("ï¿½1");
 				obj.getScore((OfflinePlayer) f1).setScore(1);
 				t1.addPlayer((OfflinePlayer) f1);
-				final FastOfflinePlayer f2 = new FastOfflinePlayer("§2");
+				final FastOfflinePlayer f2 = new FastOfflinePlayer("ï¿½2");
 				obj.getScore((OfflinePlayer) f2).setScore(2);
-				final FastOfflinePlayer f3 = new FastOfflinePlayer("§3");
+				final FastOfflinePlayer f3 = new FastOfflinePlayer("ï¿½3");
 				obj.getScore((OfflinePlayer) f3).setScore(3);
 				t2.addPlayer((OfflinePlayer) f3);
-				final FastOfflinePlayer f4 = new FastOfflinePlayer("§4");
+				final FastOfflinePlayer f4 = new FastOfflinePlayer("ï¿½4");
 				obj.getScore((OfflinePlayer) f4).setScore(4);
 				t3.addPlayer((OfflinePlayer) f4);
-				final FastOfflinePlayer f5 = new FastOfflinePlayer("§5");
+				final FastOfflinePlayer f5 = new FastOfflinePlayer("ï¿½5");
 				obj.getScore((OfflinePlayer) f5).setScore(5);
-				final FastOfflinePlayer f6 = new FastOfflinePlayer("§6");
+				final FastOfflinePlayer f6 = new FastOfflinePlayer("ï¿½6");
 				obj.getScore((OfflinePlayer) f6).setScore(6);
 				t5.addPlayer((OfflinePlayer) f6);
-				final FastOfflinePlayer f7 = new FastOfflinePlayer("§7");
+				final FastOfflinePlayer f7 = new FastOfflinePlayer("ï¿½7");
 				obj.getScore((OfflinePlayer) f7).setScore(7);
 				t6.addPlayer((OfflinePlayer) f7);
-				final FastOfflinePlayer f8 = new FastOfflinePlayer("§8");
+				final FastOfflinePlayer f8 = new FastOfflinePlayer("ï¿½8");
 				obj.getScore((OfflinePlayer) f8).setScore(8);
 				t7.addPlayer((OfflinePlayer) f8);
-				final FastOfflinePlayer f9 = new FastOfflinePlayer("§9");
+				final FastOfflinePlayer f9 = new FastOfflinePlayer("ï¿½9");
 				obj.getScore((OfflinePlayer) f9).setScore(9);
 				t8.addPlayer((OfflinePlayer) f9);
-				final FastOfflinePlayer f10 = new FastOfflinePlayer("§0");
+				final FastOfflinePlayer f10 = new FastOfflinePlayer("ï¿½0");
 				obj.getScore((OfflinePlayer) f10).setScore(10);
 			} else {
-				final FastOfflinePlayer f1 = new FastOfflinePlayer("§0");
+				final FastOfflinePlayer f1 = new FastOfflinePlayer("ï¿½0");
 				obj.getScore((OfflinePlayer) f1).setScore(1);
 				t1.addPlayer((OfflinePlayer) f1);
-				final FastOfflinePlayer f2 = new FastOfflinePlayer("§1");
+				final FastOfflinePlayer f2 = new FastOfflinePlayer("ï¿½1");
 				obj.getScore((OfflinePlayer) f2).setScore(2);
-				final FastOfflinePlayer f3 = new FastOfflinePlayer("§2");
+				final FastOfflinePlayer f3 = new FastOfflinePlayer("ï¿½2");
 				obj.getScore((OfflinePlayer) f3).setScore(3);
 				t2.addPlayer((OfflinePlayer) f3);
-				final FastOfflinePlayer f4 = new FastOfflinePlayer("§3");
+				final FastOfflinePlayer f4 = new FastOfflinePlayer("ï¿½3");
 				obj.getScore((OfflinePlayer) f4).setScore(4);
-				final FastOfflinePlayer f5 = new FastOfflinePlayer("§4");
+				final FastOfflinePlayer f5 = new FastOfflinePlayer("ï¿½4");
 				obj.getScore((OfflinePlayer) f5).setScore(5);
 				t4.addPlayer((OfflinePlayer) f5);
-				final FastOfflinePlayer f6 = new FastOfflinePlayer("§5");
+				final FastOfflinePlayer f6 = new FastOfflinePlayer("ï¿½5");
 				obj.getScore((OfflinePlayer) f6).setScore(6);
 				t5.addPlayer((OfflinePlayer) f6);
-				final FastOfflinePlayer f7 = new FastOfflinePlayer("§6");
+				final FastOfflinePlayer f7 = new FastOfflinePlayer("ï¿½6");
 				obj.getScore((OfflinePlayer) f7).setScore(7);
-				final FastOfflinePlayer f8 = new FastOfflinePlayer("§7");
+				final FastOfflinePlayer f8 = new FastOfflinePlayer("ï¿½7");
 				obj.getScore((OfflinePlayer) f8).setScore(8);
 				t7.addPlayer((OfflinePlayer) f8);
-				final FastOfflinePlayer f9 = new FastOfflinePlayer("§8");
+				final FastOfflinePlayer f9 = new FastOfflinePlayer("ï¿½8");
 				obj.getScore((OfflinePlayer) f9).setScore(9);
 				t8.addPlayer((OfflinePlayer) f9);
-				final FastOfflinePlayer f10 = new FastOfflinePlayer("§9");
+				final FastOfflinePlayer f10 = new FastOfflinePlayer("ï¿½9");
 				obj.getScore((OfflinePlayer) f10).setScore(10);
 				t9.addPlayer((OfflinePlayer) f10);
-				final FastOfflinePlayer f11 = new FastOfflinePlayer("§a");
+				final FastOfflinePlayer f11 = new FastOfflinePlayer("ï¿½a");
 				obj.getScore((OfflinePlayer) f11).setScore(11);
 				t10.addPlayer((OfflinePlayer) f11);
 			}

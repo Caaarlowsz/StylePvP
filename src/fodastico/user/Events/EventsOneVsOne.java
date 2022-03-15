@@ -24,7 +24,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.ImortalAPI;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Apis.MoneyAPI;
@@ -63,20 +63,20 @@ public class EventsOneVsOne implements Listener {
 		if (Fast1v1.inSecondsWaiting.contains(p)) {
 			if (p.getItemInHand().equals((Object) Get1v1Itens.Blaze)) {
 				p.sendMessage(
-						"§b§l1v1 §fVoc\u00ea n\u00e3o pode §c§lDESAFIAR §fum jogador, enquanto estiver na fila para §b§l1v1 §fr\u00e1pido.");
+						"ï¿½bï¿½l1v1 ï¿½fVoc\u00ea n\u00e3o pode ï¿½cï¿½lDESAFIAR ï¿½fum jogador, enquanto estiver na fila para ï¿½bï¿½l1v1 ï¿½fr\u00e1pido.");
 			}
 		} else if (p.getItemInHand().equals((Object) Get1v1Itens.Blaze)) {
 			if (EventsOneVsOne.Waiting.contains(p)) {
-				p.sendMessage("§b§l1v1 §fAguarde para §c§lDESAFIAR §7outro jogador.");
+				p.sendMessage("ï¿½bï¿½l1v1 ï¿½fAguarde para ï¿½cï¿½lDESAFIAR ï¿½7outro jogador.");
 				return;
 			}
 			final Player Player2 = (Player) event.getRightClicked();
 			EventsOneVsOne.DuelAccept.add(Player2);
 			EventsOneVsOne.Waiting.add(p);
-			p.sendMessage("§b§l1v1 §fVoc\u00ea §c§lDESAFIOU §fo jogador §a§l" + Player2.getName() + " §fpara §b§l1v1");
+			p.sendMessage("ï¿½bï¿½l1v1 ï¿½fVoc\u00ea ï¿½cï¿½lDESAFIOU ï¿½fo jogador ï¿½aï¿½l" + Player2.getName() + " ï¿½fpara ï¿½bï¿½l1v1");
 			Player2.sendMessage(
-					"§b§l1v1 §fVoc\u00ea foi §c§lDESAFIADO §fpelo jogador §a§l" + p.getName() + " §fpara §b§l1v1");
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					"ï¿½bï¿½l1v1 ï¿½fVoc\u00ea foi ï¿½cï¿½lDESAFIADO ï¿½fpelo jogador ï¿½aï¿½l" + p.getName() + " ï¿½fpara ï¿½bï¿½l1v1");
+			Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					if (EventsOneVsOne.Waiting.contains(p)) {
@@ -118,7 +118,7 @@ public class EventsOneVsOne implements Listener {
 				final ItemStack Espada = new ItemStack(Material.DIAMOND_SWORD);
 				Espada.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 1);
 				final ItemMeta Espada2 = Espada.getItemMeta();
-				Espada2.setDisplayName("§eEspada");
+				Espada2.setDisplayName("ï¿½eEspada");
 				Espada.setItemMeta(Espada2);
 				p.getInventory().addItem(new ItemStack[] { Espada });
 				Player2.getInventory().addItem(new ItemStack[] { Espada });
@@ -130,8 +130,8 @@ public class EventsOneVsOne implements Listener {
 				p.getInventory().setChestplate(new ItemStack(Material.IRON_CHESTPLATE));
 				p.getInventory().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
 				p.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));
-				p.sendMessage("§b§l1v1 §fO jogador §a§l" + Player2.getName() + " §2§lACEITOU §fo seu §c§lDESAFIO");
-				Player2.sendMessage("§b§l1v1 §fVoc\u00ea §2§lACEITOU §fo §c§lDESAFIO §fdo joador §a§l" + p.getName());
+				p.sendMessage("ï¿½bï¿½l1v1 ï¿½fO jogador ï¿½aï¿½l" + Player2.getName() + " ï¿½2ï¿½lACEITOU ï¿½fo seu ï¿½cï¿½lDESAFIO");
+				Player2.sendMessage("ï¿½bï¿½l1v1 ï¿½fVoc\u00ea ï¿½2ï¿½lACEITOU ï¿½fo ï¿½cï¿½lDESAFIO ï¿½fdo joador ï¿½aï¿½l" + p.getName());
 				ImortalAPI.removeInvensibility(p);
 				ImortalAPI.removeInvensibility(Player2);
 				for (int i = 1; i < 9; ++i) {
@@ -148,7 +148,7 @@ public class EventsOneVsOne implements Listener {
 						Fast1v1.Started.remove(Player2);
 						Fast1v1.FirstMatch = false;
 					}
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+					Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							Player[] onlinePlayers;
@@ -166,7 +166,7 @@ public class EventsOneVsOne implements Listener {
 							}
 						}
 					}, 2L);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							p.setMaxHealth(20);
@@ -807,15 +807,15 @@ public class EventsOneVsOne implements Listener {
 				ImortalAPI.setInvensibility(m);
 				ImortalAPI.setInvensibility(v);
 				m.sendMessage("     ");
-				m.sendMessage("§a§lVITORIA §fVoc\u00ea §2§lVENCEU §fa batalha contra o §a" + v.getName() + " §fcom "
-						+ amountm + " §fsopas e " + coraexato(m) + " §fcora\u00e7\u00f5es.");
+				m.sendMessage("ï¿½aï¿½lVITORIA ï¿½fVoc\u00ea ï¿½2ï¿½lVENCEU ï¿½fa batalha contra o ï¿½a" + v.getName() + " ï¿½fcom "
+						+ amountm + " ï¿½fsopas e " + coraexato(m) + " ï¿½fcora\u00e7\u00f5es.");
 				EventsOneVsOne.inBattle.remove(m);
 				EventsOneVsOne.inBattle.remove(v);
 				KitAPI.setKit(v, "1v1");
 				KitAPI.setKit(m, "1v1");
 				v.sendMessage("     ");
-				v.sendMessage("§c§lDERROTA §fVoc\u00ea §c§lPERDEU §fa batalha contra §c" + m.getName()
-						+ " §fque ficou com " + amountm + " §fsopas e " + coraexato(m) + " §fcora\u00e7\u00f5es.");
+				v.sendMessage("ï¿½cï¿½lDERROTA ï¿½fVoc\u00ea ï¿½cï¿½lPERDEU ï¿½fa batalha contra ï¿½c" + m.getName()
+						+ " ï¿½fque ficou com " + amountm + " ï¿½fsopas e " + coraexato(m) + " ï¿½fcora\u00e7\u00f5es.");
 				EventsOneVsOne.oponentename.remove(v);
 				EventsOneVsOne.oponentename2.remove(v);
 				EventsOneVsOne.oponentename.remove(m);
@@ -833,7 +833,7 @@ public class EventsOneVsOne implements Listener {
 				for (final PotionEffect effect : m.getActivePotionEffects()) {
 					m.removePotionEffect(effect.getType());
 				}
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						WarpsManager.Ir(v, "1v1");
@@ -851,7 +851,7 @@ public class EventsOneVsOne implements Listener {
 				EventsOneVsOne.isPlaying.remove(m);
 				EventsOneVsOne.LogOutOnevsOne.remove(m.getName());
 				EventsOneVsOne.LogOutOnevsOne.remove(v.getName());
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						v.getInventory().setItem(3, Get1v1Itens.Blaze);
@@ -888,15 +888,15 @@ public class EventsOneVsOne implements Listener {
 				ImortalAPI.setInvensibility(m);
 				ImortalAPI.setInvensibility(v);
 				m.sendMessage("     ");
-				m.sendMessage("§a§lVITORIA §fVoc\u00ea §2§lVENCEU §fa batalha contra o §a" + v.getName() + " §fcom "
-						+ amountm + " §fsopas e " + coraexato(m) + " §fcora\u00e7\u00f5es.");
+				m.sendMessage("ï¿½aï¿½lVITORIA ï¿½fVoc\u00ea ï¿½2ï¿½lVENCEU ï¿½fa batalha contra o ï¿½a" + v.getName() + " ï¿½fcom "
+						+ amountm + " ï¿½fsopas e " + coraexato(m) + " ï¿½fcora\u00e7\u00f5es.");
 				EventsOneVsOne.inBattle.remove(m);
 				EventsOneVsOne.inBattle.remove(v);
 				KitAPI.setKit(v, "1v1");
 				KitAPI.setKit(m, "1v1");
 				v.sendMessage("     ");
-				v.sendMessage("§c§lDERROTA §fVoc\u00ea §c§lPERDEU §fa batalha contra §c" + m.getName()
-						+ " §fque ficou com " + amountm + " §fsopas e " + coraexato(m) + " §fcora\u00e7\u00f5es.");
+				v.sendMessage("ï¿½cï¿½lDERROTA ï¿½fVoc\u00ea ï¿½cï¿½lPERDEU ï¿½fa batalha contra ï¿½c" + m.getName()
+						+ " ï¿½fque ficou com " + amountm + " ï¿½fsopas e " + coraexato(m) + " ï¿½fcora\u00e7\u00f5es.");
 				EventsOneVsOne.oponentename.remove(v);
 				EventsOneVsOne.oponentename2.remove(v);
 				EventsOneVsOne.oponentename.remove(m);
@@ -915,7 +915,7 @@ public class EventsOneVsOne implements Listener {
 				for (final PotionEffect effect : m.getActivePotionEffects()) {
 					m.removePotionEffect(effect.getType());
 				}
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						WarpsManager.Ir(v, "1v1");
@@ -931,7 +931,7 @@ public class EventsOneVsOne implements Listener {
 				EventsOneVsOne.isPlaying.remove(m);
 				EventsOneVsOne.LogOutOnevsOne.remove(m.getName());
 				EventsOneVsOne.LogOutOnevsOne.remove(v.getName());
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						v.getInventory().setItem(3, Get1v1Itens.Blaze);
@@ -974,8 +974,8 @@ public class EventsOneVsOne implements Listener {
 			}
 			ImortalAPI.setInvensibility(t);
 			t.sendMessage(
-					"§a§lVIT\u00d3RIA §f" + p.getName() + " §c§lDESLOGOU §fportando voc\u00ea §a§lVENCEU §fa batalha.");
-			t.sendMessage("§6§lMOEDAS §fVoc\u00ea §a§lRECEBEU §6§l50 MOEDAS");
+					"ï¿½aï¿½lVIT\u00d3RIA ï¿½f" + p.getName() + " ï¿½cï¿½lDESLOGOU ï¿½fportando voc\u00ea ï¿½aï¿½lVENCEU ï¿½fa batalha.");
+			t.sendMessage("ï¿½6ï¿½lMOEDAS ï¿½fVoc\u00ea ï¿½aï¿½lRECEBEU ï¿½6ï¿½l50 MOEDAS");
 			XpbyXpAPI.xpbyxp(p, t);
 			MoneyAPI.addMoney(t, 50);
 			TopKsAPI.TopKs.set(p.getName(), (Object) 0);
@@ -1017,9 +1017,9 @@ public class EventsOneVsOne implements Listener {
 				t.removePotionEffect(effect.getType());
 			}
 			ImortalAPI.setInvensibility(t);
-			t.sendMessage("§a§lVIT\u00d3RIA §f" + p.getName()
-					+ " §c§l§oDESLOGOU §fportando voc\u00ea §2§lVENCEU §fa batalha.");
-			t.sendMessage("§6§lMOEDAS §fVoc\u00ea §a§lRECEBEU §6§l50 MOEDAS");
+			t.sendMessage("ï¿½aï¿½lVIT\u00d3RIA ï¿½f" + p.getName()
+					+ " ï¿½cï¿½lï¿½oDESLOGOU ï¿½fportando voc\u00ea ï¿½2ï¿½lVENCEU ï¿½fa batalha.");
+			t.sendMessage("ï¿½6ï¿½lMOEDAS ï¿½fVoc\u00ea ï¿½aï¿½lRECEBEU ï¿½6ï¿½l50 MOEDAS");
 			XpbyXpAPI.xpbyxp(p, t);
 			MoneyAPI.addMoney(t, 50);
 			TopKsAPI.TopKs.set(p.getName(), (Object) 0);
@@ -1044,7 +1044,7 @@ public class EventsOneVsOne implements Listener {
 		final Player p = event.getPlayer();
 		if (EventsOneVsOne.isPlaying.contains(p)) {
 			event.getPlayer().sendMessage(
-					"§b§l1v1 §fVoc\u00ea n\u00e3o pode executar §3§lCOMANDOS §fenquanto estiver §c§lLUTANDO");
+					"ï¿½bï¿½l1v1 ï¿½fVoc\u00ea n\u00e3o pode executar ï¿½3ï¿½lCOMANDOS ï¿½fenquanto estiver ï¿½cï¿½lLUTANDO");
 			event.setCancelled(true);
 		}
 	}

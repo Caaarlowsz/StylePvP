@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.APIs;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Events.SubEventos;
@@ -29,31 +29,31 @@ public class Ss implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("ss")) {
 			if (!p.hasPermission("kitpvp.ss")) {
 				p.sendMessage(
-						"§e§lPERMISSAO §fVoc\u00ea n\u00e3o possui §4§lPERMISSAO §fpara executar este §3§lCOMANDO.");
+						"ï¿½eï¿½lPERMISSAO ï¿½fVoc\u00ea n\u00e3o possui ï¿½4ï¿½lPERMISSAO ï¿½fpara executar este ï¿½3ï¿½lCOMANDO.");
 				return true;
 			}
 			if (args.length == 0) {
 				p.sendMessage(
-						"§4§lSCREENSHARE §fUtilize: /ss <jogador> - §3§lCOLOCA §fou §a§lLIBERA §fum jogador da §c§lSCREENSHARE");
+						"ï¿½4ï¿½lSCREENSHARE ï¿½fUtilize: /ss <jogador> - ï¿½3ï¿½lCOLOCA ï¿½fou ï¿½aï¿½lLIBERA ï¿½fum jogador da ï¿½cï¿½lSCREENSHARE");
 				p.sendMessage(
-						"§4§lSCREENSHARE §fUtilize: /ss <check> - Veja a §2§lLISTA §fde jogadores em §c§lSCREENSHARE");
+						"ï¿½4ï¿½lSCREENSHARE ï¿½fUtilize: /ss <check> - Veja a ï¿½2ï¿½lLISTA ï¿½fde jogadores em ï¿½cï¿½lSCREENSHARE");
 				return true;
 			}
 			final String nameoff = args[0];
 			if (args[0].toLowerCase().equals("check")) {
 				p.sendMessage("");
-				p.sendMessage("§4§lSCREENSHARE §fLista de §c§lSCREENSHARES §fem §e§lANDAMENTO!");
+				p.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fLista de ï¿½cï¿½lSCREENSHARES ï¿½fem ï¿½eï¿½lANDAMENTO!");
 				p.sendMessage("");
 				SubEventos.onSsList(p);
 				return true;
 			}
 			final Player ip = p.getServer().getPlayer(args[0]);
 			if (ip == null) {
-				p.sendMessage("§f§lOFFLINE §fO jogador §7(§e" + nameoff + "§7) est\u00e1 offline.");
+				p.sendMessage("ï¿½fï¿½lOFFLINE ï¿½fO jogador ï¿½7(ï¿½e" + nameoff + "ï¿½7) est\u00e1 offline.");
 				return true;
 			}
 			if (ip == p) {
-				p.sendMessage("§4§lSCREENSHARE §fVoc\u00ea n\u00e3o pode se colocar em §c§lSCREENSHARE");
+				p.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea n\u00e3o pode se colocar em ï¿½cï¿½lSCREENSHARE");
 				return true;
 			}
 			if (!Ss.inss.contains(ip)) {
@@ -63,13 +63,13 @@ public class Ss implements CommandExecutor {
 				KitAPI.setKit(p, "ScreenShare");
 				Ss.inss.add(ip);
 				Ss.sscheckname.put(ip, ip.getName());
-				Main.sc.registerScoreBoard(ip);
-				Main.sc.registerScoreBoard(p);
-				p.sendMessage("§4§lSCREENSHARE §fVoc\u00ea §e§lCOLOCOU §fo jogador §1§l" + ip.getName()
-						+ " §fem §c§lSCREENSHARE");
-				ip.sendMessage("§4§lSCREENSHARE §fVoc\u00ea foi §e§lCOLOCADO §fem §c§lSCREENSHARE");
+				StylePvP.sc.registerScoreBoard(ip);
+				StylePvP.sc.registerScoreBoard(p);
+				p.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea ï¿½eï¿½lCOLOCOU ï¿½fo jogador ï¿½1ï¿½l" + ip.getName()
+						+ " ï¿½fem ï¿½cï¿½lSCREENSHARE");
+				ip.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea foi ï¿½eï¿½lCOLOCADO ï¿½fem ï¿½cï¿½lSCREENSHARE");
 				Bukkit.broadcastMessage(
-						"§4§lSCREENSHARE §fO jogador §1§l" + ip.getName() + " §ffoi §e§lCOLOCADO §fem §c§lSCREENSHARE");
+						"ï¿½4ï¿½lSCREENSHARE ï¿½fO jogador ï¿½1ï¿½l" + ip.getName() + " ï¿½ffoi ï¿½eï¿½lCOLOCADO ï¿½fem ï¿½cï¿½lSCREENSHARE");
 				APIs.Ss(ip);
 				WarpsManager.Ir(ip, "Ss");
 				WarpsManager.Ir(p, "Ss");
@@ -83,15 +83,15 @@ public class Ss implements CommandExecutor {
 			KitAPI.sendSpawn(ip);
 			Ss.inss.remove(ip);
 			Ss.sscheckname.remove(ip);
-			Main.sc.registerScoreBoard(ip);
-			Main.sc.registerScoreBoard(p);
-			Main.sc.registerScoreBoard(ip);
-			Main.sc.registerScoreBoard(p);
-			p.sendMessage("§4§lSCREENSHARE §fVoc\u00ea §a§lLIBEROU §fo jogador §1§l" + ip.getName()
-					+ " §fda §c§lSCREENSHARE");
-			ip.sendMessage("§4§lSCREENSHARE §fVoc\u00ea foi §a§lLIBERADO §fda §c§lSCREENSHARE");
+			StylePvP.sc.registerScoreBoard(ip);
+			StylePvP.sc.registerScoreBoard(p);
+			StylePvP.sc.registerScoreBoard(ip);
+			StylePvP.sc.registerScoreBoard(p);
+			p.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea ï¿½aï¿½lLIBEROU ï¿½fo jogador ï¿½1ï¿½l" + ip.getName()
+					+ " ï¿½fda ï¿½cï¿½lSCREENSHARE");
+			ip.sendMessage("ï¿½4ï¿½lSCREENSHARE ï¿½fVoc\u00ea foi ï¿½aï¿½lLIBERADO ï¿½fda ï¿½cï¿½lSCREENSHARE");
 			Bukkit.broadcastMessage(
-					"§4§lSCREENSHARE §fO jogador §1§l" + ip.getName() + " §ffoi §a§lLIBERADO §fda §c§lSCREENSHARE");
+					"ï¿½4ï¿½lSCREENSHARE ï¿½fO jogador ï¿½1ï¿½l" + ip.getName() + " ï¿½ffoi ï¿½aï¿½lLIBERADO ï¿½fda ï¿½cï¿½lSCREENSHARE");
 			APIs.Normal(ip);
 			p.showPlayer(ip);
 			ip.showPlayer(p);

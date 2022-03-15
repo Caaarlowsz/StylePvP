@@ -16,12 +16,12 @@ import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class CommandManager {
-	private Main m;
+	private StylePvP m;
 
-	public CommandManager(final Main m) {
+	public CommandManager(final StylePvP m) {
 		this.loadCommands(this.m = m, "fodastico.user.Commands");
 	}
 
@@ -32,14 +32,14 @@ public class CommandManager {
 					try {
 						CommandExecutor commandListener = null;
 						try {
-							final Constructor<?> con = commandClass.getConstructor(Main.class);
+							final Constructor<?> con = commandClass.getConstructor(StylePvP.class);
 							commandListener = (CommandExecutor) con.newInstance(plugin);
 						} catch (Exception ex) {
 							commandListener = (CommandExecutor) commandClass.newInstance();
 						}
 						this.loadCommand(plugin, commandListener);
-						Bukkit.getConsoleSender().sendMessage("§b§lCOMANDO §fO §b§lCOMANDO §b/"
-								+ commandClass.getSimpleName() + " §ffoi carregado com sucesso!");
+						Bukkit.getConsoleSender().sendMessage("ï¿½bï¿½lCOMANDO ï¿½fO ï¿½bï¿½lCOMANDO ï¿½b/"
+								+ commandClass.getSimpleName() + " ï¿½ffoi carregado com sucesso!");
 					} catch (Exception ex2) {
 					}
 				}

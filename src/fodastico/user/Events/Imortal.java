@@ -14,7 +14,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Managers.CooldownAPI;
 
@@ -43,24 +43,24 @@ public class Imortal implements Listener {
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.BEDROCK) {
 			if (Imortal.regen.contains(p)) {
-				p.sendMessage("§3§lIMORTAL §fSua §9§lIMORTALIDADE §fj\u00e1 est\u00e1 ativada.");
+				p.sendMessage("ï¿½3ï¿½lIMORTAL ï¿½fSua ï¿½9ï¿½lIMORTALIDADE ï¿½fj\u00e1 est\u00e1 ativada.");
 				return;
 			}
 			if (KitAPI.getkit(p).equalsIgnoreCase("Imortal")
 					&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 					&& p.getItemInHand().getType() == Material.BEDROCK) {
 				if (CooldownAPI.pCooldown.containsKey(p.getName())) {
-					p.sendMessage("§3§lIMORTAL §fVoc\u00ea est\u00e1 em §c§lCOOLDOWN §fde §c§l"
+					p.sendMessage("ï¿½3ï¿½lIMORTAL ï¿½fVoc\u00ea est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l"
 							+ CooldownAPI.getCooldown(p) + "s");
 					return;
 				}
 				Imortal.regen.add(p);
-				p.sendMessage("§3§lIMORTAL §fVoc\u00ea ativou sua §9§lIMORTALIDADE");
-				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+				p.sendMessage("ï¿½3ï¿½lIMORTAL ï¿½fVoc\u00ea ativou sua ï¿½9ï¿½lIMORTALIDADE");
+				Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Imortal.regen.remove(p);
-						p.sendMessage("§3§lIMORTAL §fSua §9§lIMORTALIDADE §facabou.");
+						p.sendMessage("ï¿½3ï¿½lIMORTAL ï¿½fSua ï¿½9ï¿½lIMORTALIDADE ï¿½facabou.");
 						CooldownAPI.addCooldown(p, 60);
 					}
 				}, 600L);

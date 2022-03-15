@@ -2,15 +2,15 @@ package fodastico.user.Apis;
 
 import org.bukkit.entity.Player;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class BuildScoreAPI {
 	public static void forceBuild(final Player p) {
-		Main.sc.registerScoreBoard(p);
-		Main.sc.registerScoreBoard(p);
-		Main.sc.registerScoreBoard(p);
-		Main.sc.registerScoreBoard(p);
-		Main.sc.registerScoreBoard(p);
-		Main.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
+		StylePvP.sc.registerScoreBoard(p);
 	}
 }

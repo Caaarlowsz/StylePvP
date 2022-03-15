@@ -21,7 +21,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Managers.CooldownAPI;
 
@@ -66,7 +66,7 @@ public class Gladiator implements Listener {
 			final Player r = (Player) event.getRightClicked();
 			if (p.getItemInHand().getType() == Material.IRON_FENCE && KitAPI.getkit(p) == "Gladiator"
 					&& CooldownAPI.pCooldown.containsKey(p.getName())) {
-				p.sendMessage("§3§lGLADIATOR §fVoc\u00ea est\u00e1 em §c§lCOOLDOWN §fde §c§l"
+				p.sendMessage("ï¿½3ï¿½lGLADIATOR ï¿½fVoc\u00ea est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l"
 						+ CooldownAPI.getCooldown(p) + "s");
 				return;
 			}
@@ -103,7 +103,7 @@ public class Gladiator implements Listener {
 								if (!b.isEmpty()) {
 									event.setCancelled(true);
 									p.sendMessage(
-											"§3§lGLADIATOR §fVoc\u00ea n\u00e3o pode puxar para o §9§lGLADIATOR §fneste local.");
+											"ï¿½3ï¿½lGLADIATOR ï¿½fVoc\u00ea n\u00e3o pode puxar para o ï¿½9ï¿½lGLADIATOR ï¿½fneste local.");
 									return;
 								}
 								if (bY == 10) {
@@ -128,14 +128,14 @@ public class Gladiator implements Listener {
 					r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 					r.updateInventory();
 					p.updateInventory();
-					p.sendMessage("§4§lGLADIATOR §fBatalhando contra §a" + r.getName());
-					r.sendMessage("§4§lGLADIATOR §fBatalhando contra §a" + p.getName());
+					p.sendMessage("ï¿½4ï¿½lGLADIATOR ï¿½fBatalhando contra ï¿½a" + r.getName());
+					r.sendMessage("ï¿½4ï¿½lGLADIATOR ï¿½fBatalhando contra ï¿½a" + p.getName());
 					CooldownAPI.addCooldown(p, 15);
 					Gladiator.noExecut.add(p);
 					Gladiator.noExecut.add(r);
 					Gladiator.fighting.put(p.getName(), r.getName());
 					Gladiator.fighting.put(r.getName(), p.getName());
-					Gladiator.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(),
+					Gladiator.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -146,7 +146,7 @@ public class Gladiator implements Listener {
 									}
 								}
 							}, 2400L);
-					Gladiator.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(),
+					Gladiator.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -165,9 +165,9 @@ public class Gladiator implements Listener {
 										p.updateInventory();
 										r.updateInventory();
 										p.sendMessage(
-												"§4§lGLADIATOR §fN\u00e3o houve §a§lVENCEDORES§f, por isso voc\u00ea foi §6§lTELEPORTADO §fpara o local de origem.");
+												"ï¿½4ï¿½lGLADIATOR ï¿½fN\u00e3o houve ï¿½aï¿½lVENCEDORESï¿½f, por isso voc\u00ea foi ï¿½6ï¿½lTELEPORTADO ï¿½fpara o local de origem.");
 										r.sendMessage(
-												"§4§lGLADIATOR §fN\u00e3o houve §a§lVENCEDORES§f, por isso voc\u00ea foi §6§lTELEPORTADO §fpara o local de origem.");
+												"ï¿½4ï¿½lGLADIATOR ï¿½fN\u00e3o houve ï¿½aï¿½lVENCEDORESï¿½f, por isso voc\u00ea foi ï¿½6ï¿½lTELEPORTADO ï¿½fpara o local de origem.");
 										final Location loc = Gladiator.localizacao.get(p);
 										final List<Location> cuboid = new ArrayList<Location>();
 										for (int bX = -10; bX <= 10; ++bX) {
@@ -220,7 +220,7 @@ public class Gladiator implements Listener {
 			Gladiator.fighting.remove(p.getName());
 			Gladiator.noExecut.remove(p);
 			Gladiator.noExecut.remove(t);
-			t.sendMessage("§4§lGLADIATOR §fSeu oponente §c§lDESLOGOU§f, portanto voc\u00ea §a§lVENCEU §fa batalha!");
+			t.sendMessage("ï¿½4ï¿½lGLADIATOR ï¿½fSeu oponente ï¿½cï¿½lDESLOGOUï¿½f, portanto voc\u00ea ï¿½aï¿½lVENCEU ï¿½fa batalha!");
 			t.updateInventory();
 			final Location old = Gladiator.oldl.get(t.getName());
 			t.teleport(old);
@@ -303,7 +303,7 @@ public class Gladiator implements Listener {
 		final Player p = e.getPlayer();
 		if (Gladiator.noExecut.contains(p)) {
 			e.setCancelled(true);
-			p.sendMessage("§3§lGLADIATOR §fVoc\u00ea n\u00e3o pode executar §3§lCOMANDOS §fdurante o §9§lGLADIATOR");
+			p.sendMessage("ï¿½3ï¿½lGLADIATOR ï¿½fVoc\u00ea n\u00e3o pode executar ï¿½3ï¿½lCOMANDOS ï¿½fdurante o ï¿½9ï¿½lGLADIATOR");
 		}
 	}
 }

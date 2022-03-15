@@ -12,7 +12,7 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class Score implements CommandExecutor, Listener {
 	public static ArrayList<String> ativada;
@@ -36,7 +36,7 @@ public class Score implements CommandExecutor, Listener {
 		}
 		final Player p = (Player) sender;
 		if (args.length == 0) {
-			p.sendMessage("§6§lSCOREBOARD §fUtilize: /score <on> <off>");
+			p.sendMessage("ï¿½6ï¿½lSCOREBOARD ï¿½fUtilize: /score <on> <off>");
 			return true;
 		}
 		if (args.length != 1) {
@@ -44,11 +44,11 @@ public class Score implements CommandExecutor, Listener {
 		}
 		if (args[0].equalsIgnoreCase("off")) {
 			if (!Score.ativada.contains(p.getName())) {
-				p.sendMessage("§6§lSCOREBOARD §fSua §e§lSCOREBOARD §fj\u00e1 est\u00e1 §c§lDESATIVADA§f!");
+				p.sendMessage("ï¿½6ï¿½lSCOREBOARD ï¿½fSua ï¿½eï¿½lSCOREBOARD ï¿½fj\u00e1 est\u00e1 ï¿½cï¿½lDESATIVADAï¿½f!");
 				Score.delayzin.add(p);
 				return true;
 			}
-			p.sendMessage("§6§lSCOREBOARD §fVoc\u00ea §c§lDESATIVOU §fsua §e§lSCOREBOARD§f!");
+			p.sendMessage("ï¿½6ï¿½lSCOREBOARD ï¿½fVoc\u00ea ï¿½cï¿½lDESATIVOU ï¿½fsua ï¿½eï¿½lSCOREBOARDï¿½f!");
 			Score.ativada.remove(p.getName());
 			getScoreBoard().clearSlot(DisplaySlot.SIDEBAR);
 			p.setScoreboard(getScoreBoard());
@@ -58,13 +58,13 @@ public class Score implements CommandExecutor, Listener {
 				return true;
 			}
 			if (Score.ativada.contains(p.getName())) {
-				p.sendMessage("§6§lSCOREBOARD §fSua §e§lSCOREBOARD §fj\u00e1 est\u00e1 §a§lATIVADA§f!");
+				p.sendMessage("ï¿½6ï¿½lSCOREBOARD ï¿½fSua ï¿½eï¿½lSCOREBOARD ï¿½fj\u00e1 est\u00e1 ï¿½aï¿½lATIVADAï¿½f!");
 				return true;
 			}
-			p.sendMessage("§6§lSCOREBOARD §fVoc\u00ea §a§lATIVOU §fsua §e§lSCOREBOARD§f!");
+			p.sendMessage("ï¿½6ï¿½lSCOREBOARD ï¿½fVoc\u00ea ï¿½aï¿½lATIVOU ï¿½fsua ï¿½eï¿½lSCOREBOARDï¿½f!");
 			Score.delayzin.add(p);
 			Score.ativada.add(p.getName());
-			Main.sc.registerScoreBoard(p);
+			StylePvP.sc.registerScoreBoard(p);
 			return true;
 		}
 	}

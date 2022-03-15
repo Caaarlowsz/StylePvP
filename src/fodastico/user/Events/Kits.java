@@ -41,14 +41,14 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.APIs;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Managers.CooldownAPI;
 import net.md_5.bungee.api.ChatColor;
 
 public class Kits implements Listener {
-	public static Main plugin;
+	public static StylePvP plugin;
 	static ArrayList<String> potato;
 	public static HashMap<String, ItemStack[]> salvararmor;
 	public static ArrayList<String> emphantom;
@@ -131,7 +131,7 @@ public class Kits implements Listener {
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getInventory().getItemInHand().getType() == Material.BONE) {
 			if (CooldownAPI.pCooldown.containsKey(p.getName())) {
-				p.sendMessage("§3§lSNIPER §fVoc\u00ea ainda est\u00e1 em §c§lCOOLDOWN §fde §c§l"
+				p.sendMessage("ï¿½3ï¿½lSNIPER ï¿½fVoc\u00ea ainda est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l"
 						+ CooldownAPI.getCooldown(p) + "s");
 				return;
 			}
@@ -169,50 +169,50 @@ public class Kits implements Listener {
 			final Player k = (Player) e.getRightClicked();
 			if (p.getItemInHand().getType().equals((Object) Material.TNT) && KitAPI.getkit(p) == "HotPotato") {
 				if (Gladiator.fighting.containsKey(p.getName())) {
-					p.sendMessage("§3§lHOTPOTATO §fVoc\u00ea n\u00e3o pode usar este §b§lKIT no §9§lGLADIATOR");
+					p.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fVoc\u00ea n\u00e3o pode usar este ï¿½bï¿½lKIT no ï¿½9ï¿½lGLADIATOR");
 				} else {
 					if (CooldownAPI.pCooldown.containsKey(p.getName())) {
-						p.sendMessage("§3§lHOTPOTATO §fVoc\u00ea ainda est\u00e1 em §c§lCOOLDOWN §fde §c§l"
+						p.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fVoc\u00ea ainda est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l"
 								+ CooldownAPI.getCooldown(p) + "s");
 						return;
 					}
 					KitAPI.addSimpleCooldownKit(p, 20);
 					Kits.potato.add(k.getName());
-					p.sendMessage("§3§lHOTPOTATO §fVoc\u00ea colocou a §c§l§oTNT §fno §e§o" + k.getName());
+					p.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fVoc\u00ea colocou a ï¿½cï¿½lï¿½oTNT ï¿½fno ï¿½eï¿½o" + k.getName());
 					k.sendMessage(
-							"§3§lHOTPOTATO §c§o" + p.getName() + " §fcolocou uma §c§l§oTNT §fna sua cabe\u00e7a!");
+							"ï¿½3ï¿½lHOTPOTATO ï¿½cï¿½o" + p.getName() + " ï¿½fcolocou uma ï¿½cï¿½lï¿½oTNT ï¿½fna sua cabe\u00e7a!");
 					final ItemStack tnt = new ItemStack(Material.TNT);
 					final ItemMeta tntmeta = tnt.getItemMeta();
-					tntmeta.setDisplayName("§cTNT");
+					tntmeta.setDisplayName("ï¿½cTNT");
 					tnt.setItemMeta(tntmeta);
 					k.getInventory().setHelmet(tnt);
 					new BukkitRunnable() {
 						public void run() {
 							if (Kits.potato.contains(k.getName())) {
 								k.sendMessage(
-										"§3§lHOTPOTATO §fA §c§l§oTNT §fna sua cabe\u00e7a §4§lEXPLODIR\u00c1 §fem 3 segundo!");
-								k.sendMessage("§3§lHOTPOTATO §fAbra seu invent\u00e1rio e §c§lREMOVA §fela!");
+										"ï¿½3ï¿½lHOTPOTATO ï¿½fA ï¿½cï¿½lï¿½oTNT ï¿½fna sua cabe\u00e7a ï¿½4ï¿½lEXPLODIR\u00c1 ï¿½fem 3 segundo!");
+								k.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fAbra seu invent\u00e1rio e ï¿½cï¿½lREMOVA ï¿½fela!");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance(), 0L);
+					}.runTaskLater((Plugin) StylePvP.getInstance(), 0L);
 					new BukkitRunnable() {
 						public void run() {
 							if (Kits.potato.contains(k.getName())) {
 								k.sendMessage(
-										"§3§lHOTPOTATO §fA §c§l§oTNT §fna sua cabe\u00e7a §4§lEXPLODIR\u00c1 §fem 2 segundo!");
-								k.sendMessage("§3§lHOTPOTATO §fAbra seu invent\u00e1rio e §c§lREMOVA §fela!");
+										"ï¿½3ï¿½lHOTPOTATO ï¿½fA ï¿½cï¿½lï¿½oTNT ï¿½fna sua cabe\u00e7a ï¿½4ï¿½lEXPLODIR\u00c1 ï¿½fem 2 segundo!");
+								k.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fAbra seu invent\u00e1rio e ï¿½cï¿½lREMOVA ï¿½fela!");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance(), 20L);
+					}.runTaskLater((Plugin) StylePvP.getInstance(), 20L);
 					new BukkitRunnable() {
 						public void run() {
 							if (Kits.potato.contains(k.getName())) {
 								k.sendMessage(
-										"§3§lHOTPOTATO §fA §c§l§oTNT §fna sua cabe\u00e7a §4§lEXPLODIR\u00c1 §fem 1 segundo!");
-								k.sendMessage("§3§lHOTPOTATO §fAbra seu invent\u00e1rio e §c§lREMOVA §fela!");
+										"ï¿½3ï¿½lHOTPOTATO ï¿½fA ï¿½cï¿½lï¿½oTNT ï¿½fna sua cabe\u00e7a ï¿½4ï¿½lEXPLODIR\u00c1 ï¿½fem 1 segundo!");
+								k.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fAbra seu invent\u00e1rio e ï¿½cï¿½lREMOVA ï¿½fela!");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance(), 40L);
+					}.runTaskLater((Plugin) StylePvP.getInstance(), 40L);
 					new BukkitRunnable() {
 						public void run() {
 							if (Kits.potato.contains(k.getName())) {
@@ -222,7 +222,7 @@ public class Kits implements Listener {
 								Kits.potato.remove(k.getName());
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance(), 60L);
+					}.runTaskLater((Plugin) StylePvP.getInstance(), 60L);
 				}
 			}
 		}
@@ -237,7 +237,7 @@ public class Kits implements Listener {
 			e.setCancelled(true);
 			p.getInventory().setHelmet((ItemStack) null);
 			p.playSound(p.getLocation(), Sound.CREEPER_HISS, 2.0f, 2.0f);
-			p.sendMessage("§3§lHOTPOTATO §fVoc\u00ea §a§lDESARMOU §fa §9§lHOTPOTATO");
+			p.sendMessage("ï¿½3ï¿½lHOTPOTATO ï¿½fVoc\u00ea ï¿½aï¿½lDESARMOU ï¿½fa ï¿½9ï¿½lHOTPOTATO");
 			p.closeInventory();
 		}
 	}
@@ -267,7 +267,7 @@ public class Kits implements Listener {
 					e.getEntity().teleport(shooterLoc);
 					shooter.getInventory().addItem(new ItemStack[] { APIs.criarItem(shooter, Material.SNOW_BALL,
 							ChatColor.GREEN + "Switcher", new String[1], 5, (short) 0) });
-					shooter.sendMessage("§3§lSWITCHER §a§l+ 5 BOLINHAS");
+					shooter.sendMessage("ï¿½3ï¿½lSWITCHER ï¿½aï¿½l+ 5 BOLINHAS");
 					shooter.getPlayer().getWorld().playEffect(shooterLoc, Effect.ENDER_SIGNAL, 10);
 					shooter.getPlayer().getWorld().playEffect(shooterLoc, Effect.EXTINGUISH, 10);
 					shooter.getWorld().playSound(shooter.getLocation(), Sound.ENDERMAN_TELEPORT, 1.0f, 1.2f);
@@ -295,7 +295,7 @@ public class Kits implements Listener {
 				&& p.getItemInHand().getType() == Material.FEATHER) {
 			e.setCancelled(true);
 			if (Kits.emphantom.contains(p.getName())) {
-				p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §fj\u00e1 est\u00e1 ativado.");
+				p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½fj\u00e1 est\u00e1 ativado.");
 				return;
 			}
 		}
@@ -304,7 +304,7 @@ public class Kits implements Listener {
 				&& p.getItemInHand().getType() == Material.FEATHER) {
 			e.setCancelled(true);
 			if (CooldownAPI.pCooldown.containsKey(p.getName())) {
-				p.sendMessage("§3§lPHANTOM §fVoc\u00ea est\u00e1 em §c§lCOOLDOWN §fde §c§l" + CooldownAPI.getCooldown(p)
+				p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fVoc\u00ea est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l" + CooldownAPI.getCooldown(p)
 						+ "s");
 				return;
 			}
@@ -316,22 +316,22 @@ public class Kits implements Listener {
 			p.getInventory().setArmorContents((ItemStack[]) null);
 			final ItemStack Peito = new ItemStack(Material.LEATHER_CHESTPLATE);
 			final LeatherArmorMeta kPeito = (LeatherArmorMeta) Peito.getItemMeta();
-			kPeito.setDisplayName("§cPeitoral");
+			kPeito.setDisplayName("ï¿½cPeitoral");
 			kPeito.setColor(Color.BLUE);
 			Peito.setItemMeta((ItemMeta) kPeito);
 			final ItemStack Cal\u00e7a = new ItemStack(Material.LEATHER_LEGGINGS);
 			final LeatherArmorMeta kCa\u00e7a = (LeatherArmorMeta) Cal\u00e7a.getItemMeta();
-			kCa\u00e7a.setDisplayName("§cCal\u00e7a");
+			kCa\u00e7a.setDisplayName("ï¿½cCal\u00e7a");
 			kCa\u00e7a.setColor(Color.GREEN);
 			Cal\u00e7a.setItemMeta((ItemMeta) kCa\u00e7a);
 			final ItemStack Bota = new ItemStack(Material.LEATHER_BOOTS);
 			final LeatherArmorMeta kBota = (LeatherArmorMeta) Bota.getItemMeta();
-			kBota.setDisplayName("§cBotas");
+			kBota.setDisplayName("ï¿½cBotas");
 			kBota.setColor(Color.PURPLE);
 			Bota.setItemMeta((ItemMeta) kBota);
 			final ItemStack Capacete = new ItemStack(Material.LEATHER_HELMET);
 			final LeatherArmorMeta kCasapete = (LeatherArmorMeta) Capacete.getItemMeta();
-			kCasapete.setDisplayName("§cCapacete");
+			kCasapete.setDisplayName("ï¿½cCapacete");
 			kCasapete.setColor(Color.AQUA);
 			Capacete.setItemMeta((ItemMeta) kCasapete);
 			p.getInventory().setChestplate(Peito);
@@ -340,40 +340,40 @@ public class Kits implements Listener {
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
 			CooldownAPI.addCooldown(p, 30);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §facaba em §9§l5 SEGUNDOS");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½facaba em ï¿½9ï¿½l5 SEGUNDOS");
 				}
 			}, 0L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §facaba em §9§l4 SEGUNDOS");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½facaba em ï¿½9ï¿½l4 SEGUNDOS");
 				}
 			}, 20L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §facaba em §9§l3 SEGUNDOS");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½facaba em ï¿½9ï¿½l3 SEGUNDOS");
 				}
 			}, 40L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §facaba em §9§l2 SEGUNDOS");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½facaba em ï¿½9ï¿½l2 SEGUNDOS");
 				}
 			}, 60L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §facaba em §9§l1 SEGUNDOS");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½facaba em ï¿½9ï¿½l1 SEGUNDOS");
 				}
 			}, 80L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.getInstance(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage("§3§lPHANTOM §fSeu §9§lPHANTOM §9§lACABOU");
+					p.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu ï¿½9ï¿½lPHANTOM ï¿½9ï¿½lACABOU");
 					Kits.emphantom.remove(p.getName());
 					p.getInventory().setArmorContents((ItemStack[]) Kits.salvararmor.get(p.getName()));
 					p.updateInventory();
@@ -403,7 +403,7 @@ public class Kits implements Listener {
 		if (KitAPI.getkit(p) == "Anchor") {
 			p.setVelocity(new Vector());
 			p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instancea,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.instancea,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -414,7 +414,7 @@ public class Kits implements Listener {
 		if (KitAPI.getkit(a) == "Anchor") {
 			a.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			p.setVelocity(new Vector());
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instancea,
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) StylePvP.instancea,
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -441,7 +441,7 @@ public class Kits implements Listener {
 		if (e.getCaught() instanceof Player && KitAPI.getkit(p) == "Fisherman") {
 			final Player t = (Player) e.getCaught();
 			t.teleport((Entity) p);
-			p.sendMessage("§3§lFISHERMAN §fVoc\u00ea puxou o jogador §c§o" + t.getName());
+			p.sendMessage("ï¿½3ï¿½lFISHERMAN ï¿½fVoc\u00ea puxou o jogador ï¿½cï¿½o" + t.getName());
 			e.setCancelled(false);
 		}
 	}
@@ -452,7 +452,7 @@ public class Kits implements Listener {
 		if (e.getCaught() instanceof Player && KitAPI.getkit(p) == "Launcher") {
 			final Player t = (Player) e.getCaught();
 			if (this.hasCooldown()) {
-				p.sendMessage("§3§lLAUNCHER §fSeu §c§lCOOLDOWN §facaba em §c§l" + this.cooldownTimeRemaining());
+				p.sendMessage("ï¿½3ï¿½lLAUNCHER ï¿½fSeu ï¿½cï¿½lCOOLDOWN ï¿½facaba em ï¿½cï¿½l" + this.cooldownTimeRemaining());
 				return;
 			}
 			t.setVelocity(t.getVelocity().setY(1.0));
@@ -510,7 +510,7 @@ public class Kits implements Listener {
 				vector.multiply(0.1f);
 				vector.setY(0.1);
 				p.setVelocity(vector);
-				p.sendMessage("§3§lCOMBATE §fVoc\u00ea est\u00e1 em §9§lCOMBATE");
+				p.sendMessage("ï¿½3ï¿½lCOMBATE ï¿½fVoc\u00ea est\u00e1 em ï¿½9ï¿½lCOMBATE");
 			}
 			if (!this.noescape.contains(p.getName())) {
 				if (!this.timer.contains(p.getName())) {
@@ -558,8 +558,8 @@ public class Kits implements Listener {
 				final int c = r.nextInt(100);
 				if (c <= 30) {
 					e.setDamage(e.getDamage() + 1.8);
-					p.sendMessage("§3§lCRITICAL §fVoc\u00ea recebeu um golpe §c§lCRITICO §fde §c" + d.getName());
-					d.sendMessage("§3§lCRITICAL §fVoc\u00ea deu um golpe §9§lCRITICO §fno jogador §e" + p.getName());
+					p.sendMessage("ï¿½3ï¿½lCRITICAL ï¿½fVoc\u00ea recebeu um golpe ï¿½cï¿½lCRITICO ï¿½fde ï¿½c" + d.getName());
+					d.sendMessage("ï¿½3ï¿½lCRITICAL ï¿½fVoc\u00ea deu um golpe ï¿½9ï¿½lCRITICO ï¿½fno jogador ï¿½e" + p.getName());
 				}
 			}
 		}
@@ -589,10 +589,10 @@ public class Kits implements Listener {
 				}
 				if (KitAPI.getkit(plr) == "AntiStomper") {
 					plr.damage(2.0, (Entity) p);
-					plr.sendMessage("§3§lANTISTOMPER §fVoc\u00ea recebeu dano reduzido do §9§lSTOMPER");
+					plr.sendMessage("ï¿½3ï¿½lANTISTOMPER ï¿½fVoc\u00ea recebeu dano reduzido do ï¿½9ï¿½lSTOMPER");
 				} else {
 					plr.damage(800.0, (Entity) p);
-					plr.sendMessage("§3§lSTOMPER §fVoc\u00ea foi §c§lSTOMPADO §fpor §c" + p.getName());
+					plr.sendMessage("ï¿½3ï¿½lSTOMPER ï¿½fVoc\u00ea foi ï¿½cï¿½lSTOMPADO ï¿½fpor ï¿½c" + p.getName());
 					plr.getKiller();
 				}
 			}
@@ -681,7 +681,7 @@ public class Kits implements Listener {
 		}
 		if (KitAPI.getkit(p) == "Turtle") {
 			e.setCancelled(true);
-			p.sendMessage("§3§lTURTLE §fVoc\u00ea n\u00e3o pode hitar enquanto estiver agachado(shift)");
+			p.sendMessage("ï¿½3ï¿½lTURTLE ï¿½fVoc\u00ea n\u00e3o pode hitar enquanto estiver agachado(shift)");
 		}
 	}
 
@@ -693,7 +693,7 @@ public class Kits implements Listener {
 			final Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
 			if (KitAPI.getkit(localPlayer1) == "Ninja") {
 				this.a.put(localPlayer1, localPlayer2);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Kits.cooldownbk.remove(localPlayer1);
@@ -738,7 +738,7 @@ public class Kits implements Listener {
 			final ItemStack hand = p.getItemInHand();
 			if (hand.getType() == Material.WOOD_AXE) {
 				if (CooldownAPI.pCooldown.containsKey(p.getName())) {
-					p.sendMessage("§3§lTHOR §fVoc\u00ea est\u00e1 em §c§lCOOLDOWN §fde §c§l"
+					p.sendMessage("ï¿½3ï¿½lTHOR ï¿½fVoc\u00ea est\u00e1 em ï¿½cï¿½lCOOLDOWN ï¿½fde ï¿½cï¿½l"
 							+ CooldownAPI.getCooldown(p) + "s");
 				} else {
 					final Location loc = p.getTargetBlock(null, 20).getLocation();

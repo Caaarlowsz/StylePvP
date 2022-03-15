@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 
 public class TimeAPI {
 	public static long total;
@@ -28,7 +28,7 @@ public class TimeAPI {
 		TimeAPI.totalzao = hour + minute + second;
 		final long newTime = TimeAPI.total * 1000L + System.currentTimeMillis();
 		TimeAPI.temptime.put(string, TimeLeftAPI.getRemainingTime(newTime));
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(StylePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				TimeAPI.removeTempo(string);

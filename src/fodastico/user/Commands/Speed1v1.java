@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import fodastico.user.Main;
+import com.github.caaarlowsz.stylemc.kitpvp.StylePvP;
 import fodastico.user.Apis.ImortalAPI;
 import fodastico.user.Apis.KitAPI;
 import fodastico.user.Events.EventsOneVsOne;
@@ -20,7 +20,7 @@ import fodastico.user.Warp.WarpsManager;
 public class Speed1v1 implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§cVoc\u00ea n\u00e3o \u00e9 um jogador.");
+			sender.sendMessage("ï¿½cVoc\u00ea n\u00e3o \u00e9 um jogador.");
 			return false;
 		}
 		final Player p = (Player) sender;
@@ -56,7 +56,7 @@ public class Speed1v1 implements CommandExecutor {
 					final ItemStack Espada = new ItemStack(Material.DIAMOND_SWORD);
 					Espada.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 1);
 					final ItemMeta Espada2 = Espada.getItemMeta();
-					Espada2.setDisplayName("§eEspada");
+					Espada2.setDisplayName("ï¿½eEspada");
 					Espada.setItemMeta(Espada2);
 					p.getInventory().addItem(new ItemStack[] { Espada });
 					Player2.getInventory().addItem(new ItemStack[] { Espada });
@@ -73,10 +73,10 @@ public class Speed1v1 implements CommandExecutor {
 					ImortalAPI.removeInvensibility(p);
 					ImortalAPI.removeInvensibility(Player2);
 					p.sendMessage(
-							"§a§lFAST1V1 §fO §b§l1v1 §faleat\u00f3rio escolheu como seu §c§lOPONENTE §fo jogador §3"
+							"ï¿½aï¿½lFAST1V1 ï¿½fO ï¿½bï¿½l1v1 ï¿½faleat\u00f3rio escolheu como seu ï¿½cï¿½lOPONENTE ï¿½fo jogador ï¿½3"
 									+ Player2.getName());
 					Player2.sendMessage(
-							"§a§lFAST1V1 §fO §b§l1v1 §faleat\u00f3rio escolheu como seu §c§lOPONENTE §fo jogador §3"
+							"ï¿½aï¿½lFAST1V1 ï¿½fO ï¿½bï¿½l1v1 ï¿½faleat\u00f3rio escolheu como seu ï¿½cï¿½lOPONENTE ï¿½fo jogador ï¿½3"
 									+ p.getName());
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, j = 0; j < length; ++j) {
@@ -104,7 +104,7 @@ public class Speed1v1 implements CommandExecutor {
 							Fast1v1.Started.remove(Player2);
 							Fast1v1.FirstMatch = false;
 						}
-						Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+						Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 							@Override
 							public void run() {
 								p.setMaxHealth(20);
@@ -113,7 +113,7 @@ public class Speed1v1 implements CommandExecutor {
 								Player2.setHealth(20);
 							}
 						}, 20L);
-						Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+						Bukkit.getScheduler().scheduleSyncDelayedTask(StylePvP.plugin, (Runnable) new Runnable() {
 							@Override
 							public void run() {
 								p.setMaxHealth(20);
